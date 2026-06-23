@@ -8,8 +8,7 @@ tags:
 
 ## 채널
 - 🐙 GitHub — [github.com/DBhyeong](https://github.com/DBhyeong)
-- ✍️ Blog — [dataanalytics.tistory.com](https://dataanalytics.tistory.com)
-- ▶️ YouTube — @hyeongdata *(준비중)*
+- ▶️ YouTube — [@istp-hyeong](https://www.youtube.com/@istp-hyeong)
 - 💼 LinkedIn — @hyeongdata *(준비중)*
 
 ## 대표 GitHub 리포지토리
