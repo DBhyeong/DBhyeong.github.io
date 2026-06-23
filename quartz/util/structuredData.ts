@@ -27,6 +27,7 @@ function pageUrl(cfg: any, slug?: string): string {
 const CRUMB_LABELS: Record<string, string> = {
   blog: "블로그",
   reading: "읽을거리",
+  daily: "일상",
   portfolio: "포트폴리오",
   tags: "태그",
   about: "About",

@@ -5,7 +5,22 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    // 홈(index)에만 "최근 글" 노출 — 블로그+일상 새 글을 자동 표시
+    Component.ConditionalRender({
+      component: Component.RecentNotes({
+        title: "🆕 최근 글",
+        limit: 6,
+        filter: (f) => {
+          const s = f.slug ?? ""
+          if (s.endsWith("index")) return false // 섹션 인덱스 제외
+          return s.startsWith("blog/") || s.startsWith("daily/")
+        },
+        linkToMore: "blog/" as any,
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+  ],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/jackyzha0/quartz",

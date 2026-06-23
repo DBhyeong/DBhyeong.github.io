@@ -12,6 +12,7 @@ title: Hyeong · 데이터·마케팅·개발 제너럴리스트
 - [[portfolio/index|🗂️ 포트폴리오]] — 대표 프로젝트 카드
 - [[blog/index|🧪 기술 블로그]] — 게임데이터 · 자동화 · Python/JS/C# · SEO · AI워크플로
 - [[reading/index|📚 읽을거리 (지식 가든)]] — 읽은 자료 · 개념 노트 ([[wikilink]]·그래프)
+- [[daily/index|🌙 일상]] — 가벼운 기록 · 넋두리 (각 안 잡고 쓰는 공간)
 - [[links|🔗 Links]] — 채널 · GitHub 리포지토리
 
 ## 대표 프로젝트 (미리보기)
