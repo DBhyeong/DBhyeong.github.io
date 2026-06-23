@@ -5,12 +5,14 @@ import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { unescapeHTML } from "../util/escape"
 import { CustomOgImagesEmitterName } from "../plugins/emitters/ogImage"
+import { buildJsonLd, getCanonicalUrl, jsonLdToString } from "../util/structuredData"
 export default (() => {
   const Head: QuartzComponent = ({
     cfg,
     fileData,
     externalResources,
     ctx,
+    tree,
   }: QuartzComponentProps) => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
     const title =
@@ -35,6 +37,10 @@ export default (() => {
       (e) => e.name === CustomOgImagesEmitterName,
     )
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
+
+    // AEO/GEO: canonical + schema.org JSON-LD (Article/WebSite/BreadcrumbList/FAQPage)
+    const canonicalUrl = getCanonicalUrl(cfg, fileData.slug)
+    const jsonLd = buildJsonLd(fileData, cfg, tree)
 
     return (
       <head>
@@ -83,8 +89,16 @@ export default (() => {
         )}
 
         <link rel="icon" href={iconPath} />
+        <link rel="canonical" href={canonicalUrl} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        {jsonLd.map((obj, i) => (
+          <script
+            key={`jsonld-${i}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: jsonLdToString(obj) }}
+          />
+        ))}
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
