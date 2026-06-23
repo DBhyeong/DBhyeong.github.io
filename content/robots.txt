@@ -40,3 +40,6 @@ User-agent: Bingbot
 Allow: /
 
 Sitemap: https://dbhyeong.github.io/sitemap.xml
+
+# Daum 웹마스터도구 소유확인
+#DaumWebMasterTool:bececd69afbf4595bab38d02f425193c2da85914b7f9562134c08a9ad6311e2e:KqMtrRaDniV96GOxiqaKXg==
