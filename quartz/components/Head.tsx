@@ -92,6 +92,8 @@ export default (() => {
         <link rel="canonical" href={canonicalUrl} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        <meta name="google-site-verification" content="vq-KnMBgKAAgMVE_BAguoNTGfoDppMapgTDkaVV1HTQ" />
+        <meta name="naver-site-verification" content="90732a2544a8632e90566a95075f7eeb0b5cc270" />
         {jsonLd.map((obj, i) => (
           <script
             key={`jsonld-${i}`}
