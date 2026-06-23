@@ -4,7 +4,7 @@ tags:
   - meta
 ---
 
-채널 · 블로그 · GitHub 리포지토리 허브. (소셜 핸들 `hyeongdata` / GitHub `DBhyeong`)
+채널 · 블로그 · GitHub 리포지토리 허브. (GitHub `DBhyeong`)
 
 ## 채널
 - 🐙 GitHub — [github.com/DBhyeong](https://github.com/DBhyeong)
