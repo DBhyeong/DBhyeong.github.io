@@ -1,6 +1,6 @@
 ---
 title: 읽을거리 (지식 가든)
-description: "AI 에이전트·코딩·하네스·LLM 지식위키·GEO 등 외부 자료를 적대적 팩트체크와 함께 정리한 김형민의 지식 가든."
+description: "AI 에이전트·코딩·하네스·LLM 지식위키·GEO 등 외부 자료를 적대적 팩트체크와 함께 정리한 Hyeong의 지식 가든."
 tags:
   - reading
 ---

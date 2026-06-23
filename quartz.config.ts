@@ -2,13 +2,13 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
 /**
- * 김형민 (DBhyeong) — Quartz 4 설정
+ * Hyeong (DBhyeong) — Quartz 4 설정
  * 이 파일은 Quartz 클론의 루트(quartz/quartz.config.ts)에 덮어쓰기 하세요.
  * 사이트 주소: https://dbhyeong.github.io
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "김형민 · 데이터 분석가 / 디지털 마케터",
+    pageTitle: "Hyeong · 데이터·마케팅·개발 제너럴리스트",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,

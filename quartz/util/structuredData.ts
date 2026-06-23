@@ -6,9 +6,9 @@ const SITE = (cfg: any): string => `https://${cfg?.baseUrl ?? "example.com"}`
 
 const PERSON = (cfg: any) => ({
   "@type": "Person",
-  name: "김형민 (Kim Hyeongmin)",
+  name: "Hyeong",
   url: `${SITE(cfg)}/about`,
-  jobTitle: "데이터 분석가 / 디지털 마케터",
+  jobTitle: "데이터·마케팅·개발 제너럴리스트",
   sameAs: ["https://github.com/DBhyeong", "https://www.youtube.com/@istp-hyeong"],
 })
 
