@@ -9,6 +9,7 @@ tags:
 
 ## 🤖 AI 에이전트 · 코딩 · 하네스 · 루프
 - [[ai-agent-coding-document-ai-6-sources-deep-dive|AI 에이전트 시대 개발·데이터 워크플로 6선 심층분석]]
+- [[ponytail-lazy-senior-dev-skill|Ponytail — '게으른 시니어' AI 코드 최소화 스킬 (팩트체크)]]
 - [[harness-engineering-claude-code-design-guide|Harness Engineering — Claude Code 설계 가이드]]
 - [[harness-design-claude-code-vs-codex-book-two|하네스 설계 — Claude Code vs Codex]]
 - [[harness-engineering-checklist|하네스 엔지니어링 실무 체크리스트]]
