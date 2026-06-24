@@ -207,7 +207,7 @@ flowchart LR
 
 그리고 이 글을 쓰며 한 번 더 확인한 습관 — **개념을 글이 아니라 "루프 도식"으로 그려놓으면, 내 시스템에서 빠진 루프가 한눈에 보인다.** 나는 지금 2.5겹쯤에 있고, 다음 목표는 3겹이다.
 
-> 같이 보면 좋은 글: [[ai-news-digest-multi-agent-factcheck|AI 뉴스 다이제스트에 다중 에이전트 팩트체크를 붙인 기록]](=루프1+2 실전) · [[plaintext-md-llm-knowledge-vault|벡터DB 없이 만든 평문 MD 지식볼트]] · [[build-tech-blog-with-quartz-github-pages|Quartz로 블로그를 0원에 만든 기록]]
+> 같이 보면 좋은 글: [[loop-vs-harness-vs-ralph-when-to-use|루프 엔지니어링, 못 따라가도 괜찮다 — 언제 써야 하나(현실 점검편)]] · [[ai-news-digest-multi-agent-factcheck|AI 뉴스 다이제스트에 다중 에이전트 팩트체크를 붙인 기록]](=루프1+2 실전) · [[plaintext-md-llm-knowledge-vault|벡터DB 없이 만든 평문 MD 지식볼트]] · [[build-tech-blog-with-quartz-github-pages|Quartz로 블로그를 0원에 만든 기록]]
 
 ---
 
