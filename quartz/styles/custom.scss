@@ -52,3 +52,11 @@ article {
 a {
   font-weight: 500;
 }
+
+// 모바일: 사이트 제목이 너무 크게 4줄로 깨지는 것 완화
+@media all and (max-width: 800px) {
+  .page-title {
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+}

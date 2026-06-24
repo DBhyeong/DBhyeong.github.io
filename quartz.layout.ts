@@ -1,6 +1,25 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
+// 탐색기: 폴더별로 묶고 기본 접힘 + 폴더명 한글 라벨 → 깔끔하게
+const explorer = Component.Explorer({
+  title: "탐색기",
+  folderClickBehavior: "collapse",
+  folderDefaultState: "collapsed",
+  useSavedState: false, // 항상 접힌 상태로 시작(예전 펼침 상태 무시)
+  mapFn: (node) => {
+    const labels: Record<string, string> = {
+      blog: "🧪 기술 블로그",
+      reading: "📚 읽을거리",
+      daily: "🌙 일상",
+      portfolio: "💼 포트폴리오",
+    }
+    if (node.isFolder && labels[node.slugSegment]) {
+      node.displayName = labels[node.slugSegment]
+    }
+  },
+})
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -53,7 +72,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    explorer,
   ],
   right: [
     Component.Graph(),
@@ -77,7 +96,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    explorer,
   ],
   right: [],
 }
