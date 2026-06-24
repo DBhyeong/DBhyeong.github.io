@@ -1,4 +1,5 @@
-const userPref = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"
+// 기본값을 '라이트(밝은 테마)'로 고정. 방문자가 토글하면 그 선택이 localStorage에 저장됨.
+const userPref = "light"
 const currentTheme = localStorage.getItem("theme") ?? userPref
 document.documentElement.setAttribute("saved-theme", currentTheme)
 

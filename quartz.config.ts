@@ -27,25 +27,25 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          light: "#ffffff", // 배경: 깨끗한 흰색
+          lightgray: "#e6e8eb", // 경계선
+          gray: "#9ca3af", // 보조 텍스트·그래프
+          darkgray: "#2e3338", // 본문 텍스트 (진하게 → 가독성↑)
+          dark: "#1a1a1a", // 제목·강조 (near-black)
+          secondary: "#2f6fb3", // 링크·강조 (깔끔한 블루)
+          tertiary: "#5a86b8", // hover
+          highlight: "rgba(47, 111, 179, 0.1)", // 인라인 링크 배경
           textHighlight: "#fff23688",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          light: "#1a1b1e", // 배경 (살짝 들어올려 대비↑)
+          lightgray: "#393b40",
+          gray: "#6b7178",
+          darkgray: "#dadde1", // 본문 텍스트
+          dark: "#f0f1f2", // 제목
+          secondary: "#8fb3d9",
+          tertiary: "#6f97c0",
+          highlight: "rgba(143, 179, 217, 0.12)",
           textHighlight: "#b3aa0288",
         },
       },

@@ -1,3 +1,54 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ─────────────────────────────────────────────
+//  Pretendard 폰트 + 가독성 (wikidocs 스타일: 밝고 깔끔)
+//  Pretendard는 Head.tsx에서 CDN으로 로드. 미설치 방문자는 시스템 한글폰트로 폴백.
+// ─────────────────────────────────────────────
+:root {
+  --bodyFont:
+    "Pretendard Variable", "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --headerFont:
+    "Pretendard Variable", "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+body {
+  font-family: var(--bodyFont);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// 본문 가독성 — 글자 크기·줄간격·자간을 읽기 편하게
+article {
+  font-size: 1.04rem;
+  line-height: 1.85;
+  letter-spacing: -0.003em;
+
+  p,
+  li {
+    line-height: 1.85;
+  }
+
+  p {
+    margin: 0.8em 0 1.1em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--headerFont);
+    font-weight: 700;
+    letter-spacing: -0.012em;
+    line-height: 1.35;
+  }
+}
+
+// 링크 살짝 강조 (가독성)
+a {
+  font-weight: 500;
+}
