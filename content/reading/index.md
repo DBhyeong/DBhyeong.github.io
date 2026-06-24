@@ -37,6 +37,7 @@ tags:
 - [[geoflow-geo-content-engine|GEOFlow — GEO 콘텐츠 엔진]]
 - [[llm-ai-news-sources-catalog|LLM/AI 정보원 · 구독처 카탈로그]]
 - [[korea-ai-news-agent-governance-2026-06-23|국내 AI 이슈 — 에이전트 거버넌스 外 (AI타임스)]]
+- [[ai-it-digest-2026-06-24|AI/IT 데일리 다이제스트 (2026-06-24)]]
 
 ---
 *외부 공개 자료 정리 노트. 1차 출처 팩트체크 반영. 사적·내부 자료는 제외.*
