@@ -13,6 +13,7 @@ tags:
 - [[harness-engineering-claude-code-design-guide|Harness Engineering — Claude Code 설계 가이드]]
 - [[harness-design-claude-code-vs-codex-book-two|하네스 설계 — Claude Code vs Codex]]
 - [[harness-engineering-checklist|하네스 엔지니어링 실무 체크리스트]]
+- [[awesome-harness-engineering-curated-list|Awesome Harness Engineering — 자료 모음 (팩트체크)]]
 - [[agent-skills-addy-osmani|Agent Skills (Addy Osmani)]]
 - [[loop-engineering-addy-osmani|Loop Engineering (Addy Osmani)]]
 - [[designing-loops-with-fable-5-anthropic|Fable 5 루프 설계 (Anthropic)]]
@@ -30,6 +31,7 @@ tags:
 - [[knowledge-tooling-ecosystem-llm-wiki-obsidian-skills|지식관리 도구 생태계]]
 - [[folder-native-ai-agent-okf-icm|폴더 네이티브 AI 에이전트 — OKF + ICM]]
 - [[claude-obsidian-agricidaniel|claude-obsidian (Karpathy 패턴 플러그인)]]
+- [[llm-graph-builder-neo4j-knowledge-graph|LLM Graph Builder — 비정형 데이터 → Neo4j 지식그래프 (팩트체크)]]
 
 ## 🔍 GEO · 마케팅 · 뉴스
 - [[geoflow-geo-content-engine|GEOFlow — GEO 콘텐츠 엔진]]
