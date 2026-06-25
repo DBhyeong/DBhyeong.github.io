@@ -12,6 +12,7 @@ tags:
 - [[ponytail-lazy-senior-dev-skill|Ponytail — '게으른 시니어' AI 코드 최소화 스킬 (팩트체크)]]
 - [[hwpxskill-hancom-hwpx-agent-skill|hwpxskill — 한컴 HWPX 서식 보존 편집 스킬 (팩트체크)]]
 - [[insane-search-gptaku-plugin|Insane Search (GPTaku) — 차단 페이지 우회 플러그인 + 합법성 점검]]
+- [[dryforge-harness-plugin-claude-codex|Dryforge — 하네스 엔지니어링을 플러그인으로 (Claude Code·Codex)]]
 - [[harness-engineering-claude-code-design-guide|Harness Engineering — Claude Code 설계 가이드]]
 - [[harness-design-claude-code-vs-codex-book-two|하네스 설계 — Claude Code vs Codex]]
 - [[harness-engineering-checklist|하네스 엔지니어링 실무 체크리스트]]
