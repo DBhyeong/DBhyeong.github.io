@@ -17,23 +17,35 @@ tags:
 ## 오늘의 줄기 한눈에
 
 ```mermaid
-mindmap
-  root((2026-06-25 이슈))
-    AI·데이터·테크
-      OpenAI Jalapeño 추론칩
-      Claude Tag Slack 에이전트
-      VibeThinker-3B
-      AI 정치자금 대리전
-    마케팅·SEO
-      구글 Limited Ad Serving
-      아마존 ChatGPT 광고
-      좋은 SEO = 좋은 GEO
-      AI slop loop
-    국내뉴스
-      반도체 클러스터 수백조
-      코스피 급등·사이드카
-      SK하이닉스 나스닥 ADR
-      고환율 1543원
+flowchart LR
+  classDef ai fill:#e8f0fe,stroke:#1a73e8,stroke-width:1.5px,color:#202124
+  classDef mk fill:#e6f4ea,stroke:#188038,stroke-width:1.5px,color:#202124
+  classDef kr fill:#fce8e6,stroke:#c5221f,stroke-width:1.5px,color:#202124
+
+  subgraph AI ["🤖 AI·데이터·테크"]
+    direction TB
+    a1["OpenAI Jalapeño 추론칩"]
+    a2["Claude Tag · Slack 협업 에이전트"]
+    a3["VibeThinker-3B · 3B 추론모델"]
+    a4["앤트로픽 vs OpenAI 정치자금 대리전"]
+  end
+  subgraph MK ["📈 마케팅·SEO"]
+    direction TB
+    m1["구글 Limited Ad Serving"]
+    m2["아마존 첫 ChatGPT 광고"]
+    m3["구글: 좋은 SEO = 좋은 GEO"]
+    m4["AI slop loop · 오정보 순환"]
+  end
+  subgraph KR ["🇰🇷 국내뉴스"]
+    direction TB
+    k1["삼성·SK 반도체 클러스터 수백조"]
+    k2["코스피 급등 · 매수 사이드카"]
+    k3["SK하이닉스 나스닥 ADR 상장"]
+    k4["원·달러 1543원 · 17년만 최고"]
+  end
+  class a1,a2,a3,a4 ai
+  class m1,m2,m3,m4 mk
+  class k1,k2,k3,k4 kr
 ```
 
 ## 🤖 AI · 데이터 · 테크
