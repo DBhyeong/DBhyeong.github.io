@@ -75,5 +75,32 @@ Karpathy가 말한 *"엄청난 신제품의 여지"* 를, nashsu 앱·claude-obs
 
 > 참고: 위 파생 프로젝트의 스타 수·릴리스 시점 등은 시점에 따라 빠르게 변하므로, 인용 시 각 repo의 현재 상태를 직접 확인하는 것이 정확하다.
 
+## 실제 입문 구현 사례 — editorp89의 "Obsidian + 터미널 플러그인" 실습
+
+위 원문은 방법론(원형)이라 "그래서 처음에 뭘 어떻게 깔지"는 비어 있다. 그 0→1 입문을 구체적으로 보여준 게 editorp89(편집자P)의 [LLM Wiki 입문 가이드](https://youtu.be/S6w4g2OQlVQ)다. Karpathy 패턴을 **Obsidian + 코덱스/클로드 코드**로 그대로 손에 잡히게 구현하는 흐름이라, 원문과 짝지어 정리해 둔다.
+
+**구조 — 로우·위키·스키마 3층.** Karpathy의 raw→wiki를 editorp89는 세 폴더로 운영한다. 파편 지식을 모으는 **로우(raw)**, 에이전트가 정리해 둔 **위키(wiki)**, 그리고 운영 규칙을 담는 **스키마(schema)**. 쿼리는 **위키 안에서만** 답하므로, 주제가 섞이지 않게 **관심사별로 볼트(vault)를 분리**하는 걸 권한다(자동차 정보 볼트, 업무 볼트 따로).
+
+**명령 3종 — 인제스트·쿼리·린트.** Karpathy의 ingest/Q&A/lint가 그대로 세 명령으로 떨어진다.
+
+```mermaid
+flowchart LR
+    R["📥 로우(raw)<br/>파편 지식 투입"] -->|"인제스트<br/>(ingest)"| W["📚 위키(wiki)<br/>에이전트가 정리"]
+    W -->|"쿼리(query)"| ANS["💬 위키 범위 안에서<br/>답변"]
+    W -->|"린트(lint)<br/>자주 돌릴 것"| W
+    SC["📐 스키마(schema)<br/>운영 규칙"] -.규칙 제공.-> R
+    SC -.규칙 제공.-> W
+    classDef raw fill:#fff3bf,stroke:#e67700,color:#995a00;
+    classDef wiki fill:#e6fcf5,stroke:#0ca678,color:#087f5b;
+    class R raw;
+    class W,ANS wiki;
+```
+
+> **린트(lint)** 는 여기서 "가드닝(정원 손질)"이다. Karpathy의 health check와 같은 역할 — 중복·불일치를 잡고 빠진 연결을 보완한다. editorp89도 **자주 돌리라**고 강조한다. 한 번 만들고 끝이 아니라, 계속 다듬어야 신뢰도가 올라가는 살아있는 위키라는 뜻.
+
+**세팅 흐름 — 터미널을 Obsidian 안으로.** 핵심 장치는 Obsidian의 **터미널 플러그인**이다. Obsidian 볼트 안에서 바로 코덱스(또는 클로드 코드)를 띄우고, Karpathy 원문을 먼저 파악시켜 **폴더 구조와 `AGENTS.md`를 스캐폴딩**하게 한 뒤, 인제스트·쿼리·린트를 **로컬 스킬로 등록**해 명령처럼 쓴다. ([[claude-obsidian-agricidaniel|claude-obsidian 플러그인]]은 이 구성을 플러그인 하나로 묶은 사례다.)
+
+**가장 큰 메시지 — 도구보다 도메인 지식.** editorp89가 끝에 못 박은 건 이거다. 위키가 좋은 답을 주려면 결국 **무엇을 모으고 어떻게 분류할지 아는 사람의 도메인 지식**이 먼저다. 도구는 거들 뿐이라는 것. (참고로 이 방식의 약점인 *토큰 과다 사용*을 기계 전처리로 푸는 후속이 [[graphify-llm-wiki-ast-preprocessing|Graphify]]다.)
+
 ---
 *원문: Andrej Karpathy, "LLM Knowledge Bases" ([X 원문 트윗](https://x.com/karpathy/status/2039805659525644595), 2026) · [VentureBeat 보도](https://venturebeat.com/data/karpathy-shares-llm-knowledge-base-architecture-that-bypasses-rag-with-an). 정리: 2026-06-22.*
