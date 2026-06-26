@@ -1,5 +1,6 @@
 import remarkGfm from "remark-gfm"
 import smartypants from "remark-smartypants"
+import remarkCjkFriendly from "remark-cjk-friendly"
 import { QuartzTransformerPlugin } from "../types"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
@@ -19,7 +20,12 @@ export const GitHubFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>> =
   return {
     name: "GitHubFlavoredMarkdown",
     markdownPlugins() {
-      return opts.enableSmartyPants ? [remarkGfm, smartypants] : [remarkGfm]
+      // remarkCjkFriendly: 한글 등 CJK 문자가 강조(**/*) 닫는 기호 옆에 붙을 때
+      // CommonMark flanking 규칙 때문에 **"인용"**조사 / **용어(eng)**조사 가
+      // 그대로 출력되던 문제를 해결한다.
+      return opts.enableSmartyPants
+        ? [remarkGfm, remarkCjkFriendly, smartypants]
+        : [remarkGfm, remarkCjkFriendly]
     },
     htmlPlugins() {
       if (opts.linkHeadings) {
