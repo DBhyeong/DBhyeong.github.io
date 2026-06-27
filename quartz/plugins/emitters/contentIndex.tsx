@@ -28,15 +28,17 @@ interface Options {
   rssFullHtml: boolean
   rssSlug: string
   includeEmptyFiles: boolean
+  rssFilter?: (slug: FullSlug, content: ContentDetails) => boolean
 }
 
 const defaultOptions: Options = {
   enableSiteMap: true,
   enableRSS: true,
-  rssLimit: 10,
+  rssLimit: 50,
   rssFullHtml: false,
   rssSlug: "index",
   includeEmptyFiles: true,
+  rssFilter: (slug) => isFeedPost(slug),
 }
 
 function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndexMap): string {
@@ -92,6 +94,11 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndexMap, limit?:
   </rss>`
 }
 
+function isFeedPost(slug: FullSlug): boolean {
+  const feedFolders = ["blog/", "daily/", "reading/"]
+  return feedFolders.some((folder) => slug.startsWith(folder)) && !slug.endsWith("/index")
+}
+
 export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
   opts = { ...defaultOptions, ...opts }
   return {
@@ -129,9 +136,13 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
       }
 
       if (opts?.enableRSS) {
+        const rssIndex = opts.rssFilter
+          ? new Map(Array.from(linkIndex).filter(([slug, content]) => opts.rssFilter?.(slug, content)))
+          : linkIndex
+
         yield write({
           ctx,
-          content: generateRSSFeed(cfg, linkIndex, opts.rssLimit),
+          content: generateRSSFeed(cfg, rssIndex, opts.rssLimit),
           slug: (opts?.rssSlug ?? "index") as FullSlug,
           ext: ".xml",
         })
