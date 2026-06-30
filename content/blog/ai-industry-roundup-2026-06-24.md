@@ -50,7 +50,7 @@ flowchart LR
     O --> N["Anthropic: '경미한 우회'라 반박"]
 ```
 
-- 스펙(검증됨): 기본 컨텍스트 **100만 토큰**, 요청당 출력 **12.8만 토큰**, 가격 입력 100만 토큰당 **$10**·출력 **$50**(Opus 4.8의 약 2배), 30일 데이터 보존.
+- 스펙(검증됨): 기본 컨텍스트 **100만 토큰**, 요청당 출력 **12.8만 토큰**, 가격 입력 100만 토큰당 **\$10**·출력 **\$50**(Opus 4.8의 약 2배), 30일 데이터 보존.
 - ⚠️ **양측 주장이 갈린다.** 백악관(AI 보좌역 데이비드 색스)은 "심각한 결함을 안 고쳤다"는 입장, Anthropic·아모데이는 "이미 알려진 경미한 취약점의 좁은 우회일 뿐, 수억 명이 쓰는 모델을 회수할 일은 아니다"라고 반박. 보고 경로(Amazon→재무장관→백악관)도 익명 관리자 취재 기반이다. 출처: [Fortune](https://fortune.com/2026/06/14/how-a-warning-from-amazon-led-the-white-house-to-shut-down-anthropics-mythos-model/) · [InfoQ](https://www.infoq.com/news/2026/06/claude-5-release/).
 
 **OpenAI 추론 모델, 에르되시의 1946년 추측을 반증.** OpenAI는 내부 추론 모델이 대수적 수체·골로드-샤파레비치 이론·무한 유체탑을 동원해 **평면 단위거리 문제의 상계(upper-bound) 추측을 뒤집는 구성**을 찾았다고 발표, 팀 가워스(필즈상) 등 외부 수학자가 검증·동반 논문(arXiv:2605.20695)을 냈다.
@@ -72,15 +72,15 @@ flowchart LR
 
 | 이슈 | 핵심(검증된 수치) | 출처 |
 |---|---|---|
-| **Anthropic, $965B 밸류** | 5/28 시리즈 H로 **$65B 조달**, 사후가치 **약 $965B**(Amazon $5B 등 하이퍼스케일러 약 $15B 포함), 런레이트 매출 ~$47B. OpenAI(3월 ~$852B) 추월 | [Al Jazeera](https://www.aljazeera.com/economy/2026/5/29/anthropic-soars-to-965bn-valuation-leapfrogging-openai) |
-| **Oracle 수주잔고 $638B** | FY26 Q4 매출 $19.2B(+21%), OCI +93%, **수주잔고 $638B(+363% YoY)**, FY27 순 설비투자 ~$70B | [Sherwood](https://sherwood.news/tech/oracle-q4-earnings-and-revenue-top-estimates/) |
+| **Anthropic, \$965B 밸류** | 5/28 시리즈 H로 **\$65B 조달**, 사후가치 **약 \$965B**(Amazon \$5B 등 하이퍼스케일러 약 \$15B 포함), 런레이트 매출 ~\$47B. OpenAI(3월 ~\$852B) 추월 | [Al Jazeera](https://www.aljazeera.com/economy/2026/5/29/anthropic-soars-to-965bn-valuation-leapfrogging-openai) |
+| **Oracle 수주잔고 \$638B** | FY26 Q4 매출 \$19.2B(+21%), OCI +93%, **수주잔고 \$638B(+363% YoY)**, FY27 순 설비투자 ~\$70B | [Sherwood](https://sherwood.news/tech/oracle-q4-earnings-and-revenue-top-estimates/) |
 | **노암 셰이저 → OpenAI** | 트랜스포머 논문 공저자·Gemini 공동 리드가 6/18 OpenAI 합류 발표 | [Axios](https://www.axios.com/2026/06/18/noam-shazeer-google-openai-characterai) |
-| **Qualcomm ↔ Tenstorrent** | RISC-V AI칩 스타트업을 **$8~10B에 인수 협상설** | [Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/qualcomm-mulls-taking-over-jim-kellers-tenstorrent-report-claims-deal-for-ai-chipmaker-would-value-the-company-at-between-usd8-billion-and-usd10-billion) |
+| **Qualcomm ↔ Tenstorrent** | RISC-V AI칩 스타트업을 **\$8~10B에 인수 협상설** | [Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/qualcomm-mulls-taking-over-jim-kellers-tenstorrent-report-claims-deal-for-ai-chipmaker-would-value-the-company-at-between-usd8-billion-and-usd10-billion) |
 | **OpenAI → Ona 인수** | 클라우드 개발환경 Ona(구 Gitpod, ~79명) 인수로 Codex 강화. Codex 주간 사용자 **500만+** | [InfoWorld](https://www.infoworld.com/article/4184648/openai-buys-ona-to-help-rein-in-ai-agents.html) |
 
-- ⚠️ Oracle 수주잔고는 **소수 고객(OpenAI/Stargate)에 쏠려** 있고 인식까지 시간이 걸린다(향후 12개월 인식분 ~12%), FY26 잉여현금흐름은 **-$23.7B**. 화려한 숫자 뒤의 리스크가 같이 있다.
+- ⚠️ Oracle 수주잔고는 **소수 고객(OpenAI/Stargate)에 쏠려** 있고 인식까지 시간이 걸린다(향후 12개월 인식분 ~12%), FY26 잉여현금흐름은 **-\$23.7B**. 화려한 숫자 뒤의 리스크가 같이 있다.
 - ⚠️ Tenstorrent 건은 **단일 출처(The Information)·미확정**이고, 양사 모두 언급 거부. 그리고 흔한 "**짐 켈러가 창업**"은 틀렸다 — 창업자는 **Ljubisa Bajic(2016)**, 짐 켈러는 **CEO**(2023~)다.
-- ⚠️ Ona 인수가 "€1억"은 **비공개 추정치 중 하나**일 뿐(IDC 애널리스트는 $4.5~5억 추정). 그대로 사실처럼 쓰면 안 된다.
+- ⚠️ Ona 인수가 "€1억"은 **비공개 추정치 중 하나**일 뿐(IDC 애널리스트는 \$4.5~5억 추정). 그대로 사실처럼 쓰면 안 된다.
 
 ## ③ 규제·안전은 어떻게 움직였나?
 
@@ -95,7 +95,7 @@ flowchart LR
 
 - **트럼프 행정명령(6/2).** '대상 프런티어 모델'을 출시 전 정부에 **자발적으로 최대 30일** 사전 제공(초안 90일에서 단축), **의무 라이선스·사전허가는 명시적 금지**, NSA 주도 사이버 능력 기밀 벤치마킹. 출처: [The Register](https://www.theregister.com/ai-and-ml/2026/06/02/trump-ai-executive-order-sets-30-day-frontier-model-review/5250322). ⚠️ 비평가들은 정부의 '신뢰 파트너' 선별권이 정치적으로 쓰일 수 있다고 우려.
 - **EU 'Digital Omnibus'(6/16).** 유럽의회가 **고위험 의무 시한을 연기**(독립형 Annex III 2026.8.2 → **2027.12.2**, 샌드박스 2027.8.2)하고 AI 생성 CSAM·비동의 영상 금지를 신설. 출처: [Gibson Dunn](https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/). ⚠️ 흔히 도는 "**투명성 유예 6→3개월**"은 부정확(실제는 2026.8.2 이전 출시분 **워터마킹 4개월 유예**). 또 의회 **가결**일 뿐, 이사회 정식 채택·관보 게재 전이라 아직 미발효다.
-- **Bartz v. Anthropic $1.5B 저작권 합의.** 약 48만 2천 저작물, 작품당 ~$3,000. 출처: [Publishing Perspectives](https://publishingperspectives.com/2026/05/anthropic-settlement-appears-to-cruise-through-its-final-fairness-hearing/). ⚠️ "**지급 단계 진입**"은 시기상조다 — 6/24 기준 **최종 승인이 보류** 중이라 지급은 시작되지 않았다. 변호사비 삭감도 "$3억→$1.875억"이 아니라 **"$3.75억→$1.875억"**(약 50%).
+- **Bartz v. Anthropic \$1.5B 저작권 합의.** 약 48만 2천 저작물, 작품당 ~\$3,000. 출처: [Publishing Perspectives](https://publishingperspectives.com/2026/05/anthropic-settlement-appears-to-cruise-through-its-final-fairness-hearing/). ⚠️ "**지급 단계 진입**"은 시기상조다 — 6/24 기준 **최종 승인이 보류** 중이라 지급은 시작되지 않았다. 변호사비 삭감도 "\$3억→\$1.875억"이 아니라 **"\$3.75억→\$1.875억"**(약 50%).
 - **(연결) Anthropic 'Project Glasswing' 확대(6/2).** 자율 취약점 탐지 모델 Claude Mythos Preview를 **15개국 150여 조직**(전력·수도·의료 등)으로 확대. 누적 고/심각 취약점 1만+ 식별. 출처: [CyberScoop](https://cyberscoop.com/anthropic-project-glasswing-expansion-critical-infrastructure-claude-mythos/). ⚠️ "이 확대가 6/2 행정명령에 **직접 영향**"이라는 서술은 근거 없음(같은 날이지만 우연). 그리고 이 Mythos 계열이 바로 ①에서 내려간 그 모델군이다.
 
 ## ④ 한국(국내)은 어땠나?
@@ -113,12 +113,12 @@ flowchart LR
 | 흔한/화제 서술 | 실제(1차 출처 확인) |
 |---|---|
 | Nvidia HBM4에 **마이크론도 인증**(3사) | ❌ **마이크론 제외**. Nvidia는 공급사 무명시, 실제 SK하이닉스(~70%)+삼성(~30%). '3사'는 콘텐츠팜 순환인용 |
-| Bartz 합의 **'지급 단계 진입'** | ⚠️ 시기상조 — **최종 승인 보류 중**. 변호사비 **$3.75억→$1.875억**(흔한 "$3억" 아님) |
-| 셰이저 **'$27억에 영입'** | ⚠️ $27억은 2024 **Character.AI 라이선스 거래 총액**(개인 추정 $7.5~10억), 소속도 DeepMind 아닌 **구글 본사 Gemini** |
+| Bartz 합의 **'지급 단계 진입'** | ⚠️ 시기상조 — **최종 승인 보류 중**. 변호사비 **\$3.75억→\$1.875억**(흔한 "\$3억" 아님) |
+| 셰이저 **'\$27억에 영입'** | ⚠️ \$27억은 2024 **Character.AI 라이선스 거래 총액**(개인 추정 \$7.5~10억), 소속도 DeepMind 아닌 **구글 본사 Gemini** |
 | EU **'투명성 유예 6→3개월'** | ⚠️ 실제는 **워터마킹 4개월 유예**(~2026.12.2). 또 의회 **가결**일 뿐 미발효 |
 | Tenstorrent **'짐 켈러 창업'** | ⚠️ 창업자 **Ljubisa Bajic(2016)**, 켈러는 **CEO**. 거래도 단일출처·미확정 |
 | 에르되시 **'AI가 난제 해결'** | ⚠️ 상계 **추측 반증**이지 완전해결 아님. δ=0.014는 **사람의 후속 개선** |
-| Ona 인수가 **€1억** | ⚠️ 비공개. 추정 편차 큼($4.5~5억 추정도) |
+| Ona 인수가 **€1억** | ⚠️ 비공개. 추정 편차 큼(\$4.5~5억 추정도) |
 | Glasswing 확대가 **EO에 직접 영향** | ⚠️ 근거 없음(같은 날이나 우연) |
 
 ## 배운 점
