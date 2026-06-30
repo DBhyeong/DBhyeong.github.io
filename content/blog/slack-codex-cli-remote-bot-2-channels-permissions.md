@@ -171,6 +171,8 @@ flowchart TD
 
 오늘은 그 그릇에 가장 안전한 첫 숟갈(`read-only` 읽기)만 떠봤다. 권한을 한 칸씩 여는 건, 텔레그램 때와 똑같이 — 천천히, 로그를 남기며.
 
+▶ 이어지는 3편에서는 실제 업무 파일이 있는 **OneDrive를 연결**하고, **슬랙 채널 자체를 봇이 관리**(생성·초대·아카이브)하게 만든다 — [[slack-codex-cli-remote-bot-3-onedrive-channels|3편: OneDrive 연결과 채널 관리 API]].
+
 > 안전: 실제 Slack 토큰·User ID·전체 경로 없음(전부 일반화 예시). 개인 PC에서 본인만 쓰는 용도.
 
 <!-- 안전: 회사 실데이터·제3자 PII·실제 토큰/ID/경로 없음. xapp/xoxb·Slack User ID·C:\Users 실경로는 플레이스홀더로 일반화. -->
