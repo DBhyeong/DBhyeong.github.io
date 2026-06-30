@@ -73,15 +73,35 @@ if (!urls || !urls.length) {
   process.exit(0);
 }
 
-const body = { host: HOST, key: KEY, keyLocation: KEY_LOCATION, urlList: urls };
-const res = await fetch(ENDPOINT, {
+// 1) IndexNow (Bing·Yandex·Seznam 등). 키는 공개.
+const inRes = await fetch(ENDPOINT, {
   method: "POST",
   headers: { "Content-Type": "application/json; charset=utf-8" },
-  body: JSON.stringify(body),
+  body: JSON.stringify({ host: HOST, key: KEY, keyLocation: KEY_LOCATION, urlList: urls }),
 });
-const txt = await res.text();
-console.log(`IndexNow 제출: ${urls.length}개 → HTTP ${res.status} ${res.statusText}`);
+const inTxt = await inRes.text();
+const inOk = inRes.status === 200 || inRes.status === 202;
+console.log(`IndexNow 제출: ${urls.length}개 → HTTP ${inRes.status} ${inRes.statusText}`);
 urls.forEach((u) => console.log("  -", u));
-if (txt) console.log("응답:", txt);
-// IndexNow는 성공 시 200/202를 반환
-process.exit(res.status === 200 || res.status === 202 ? 0 : 1);
+if (inTxt) console.log("  응답:", inTxt);
+
+// 2) Bing URL Submission API (BING_API_KEY 있을 때만 — CI 시크릿). IndexNow와 별개의 직접 제출.
+let bingOk = true;
+if (process.env.BING_API_KEY) {
+  const SITE = process.env.BING_SITE_URL || BASE;
+  const bRes = await fetch(
+    `https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey=${process.env.BING_API_KEY}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify({ siteUrl: SITE, urlList: urls }),
+    },
+  );
+  const bTxt = await bRes.text();
+  bingOk = bRes.ok && !/ErrorCode/i.test(bTxt);
+  console.log(`Bing SubmitUrlBatch: ${urls.length}개 → HTTP ${bRes.status} ${bTxt || ""}`);
+} else {
+  console.log("Bing: BING_API_KEY 미설정 → 건너뜀(IndexNow가 Bing 커버).");
+}
+
+process.exitCode = inOk && bingOk ? 0 : 1;

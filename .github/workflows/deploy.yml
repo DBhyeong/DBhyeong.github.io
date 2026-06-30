@@ -57,8 +57,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Ping IndexNow
+      - name: Ping IndexNow (+ Bing if secret set)
         env:
           BEFORE: ${{ github.event.before }}
           AFTER: ${{ github.sha }}
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
         run: node scripts/indexnow-ping.mjs
