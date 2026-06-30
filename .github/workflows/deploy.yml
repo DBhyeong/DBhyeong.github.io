@@ -44,3 +44,21 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # 배포 후 IndexNow 자동 핑(Bing·Yandex·Seznam 등). 키는 공개라 시크릿 불필요.
+  # 이번 푸시에서 바뀐 content/*.md만 골라 제출(없으면 건너뜀).
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 변경 글 산출용 git diff에 전체 히스토리 필요
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Ping IndexNow
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: node scripts/indexnow-ping.mjs
