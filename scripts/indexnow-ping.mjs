@@ -84,6 +84,10 @@ const inOk = inRes.status === 200 || inRes.status === 202;
 console.log(`IndexNow 제출: ${urls.length}개 → HTTP ${inRes.status} ${inRes.statusText}`);
 urls.forEach((u) => console.log("  -", u));
 if (inTxt) console.log("  응답:", inTxt);
+if (!inOk) {
+  // 403/429 등은 대개 짧은 간격 재제출에 대한 rate-limit(일시적). 검색엔진은 비동기로 재검증하므로 치명적 아님.
+  console.log(`  ⚠️ IndexNow 비2xx 응답(${inRes.status}) — 일시적 rate-limit일 수 있음(사이트맵으로 자연 색인됨).`);
+}
 
 // 2) Bing URL Submission API (BING_API_KEY 있을 때만 — CI 시크릿). IndexNow와 별개의 직접 제출.
 let bingOk = true;
@@ -100,8 +104,14 @@ if (process.env.BING_API_KEY) {
   const bTxt = await bRes.text();
   bingOk = bRes.ok && !/ErrorCode/i.test(bTxt);
   console.log(`Bing SubmitUrlBatch: ${urls.length}개 → HTTP ${bRes.status} ${bTxt || ""}`);
+  if (!bingOk) console.log("  ⚠️ Bing 제출 실패(쿼터·일시오류 가능) — IndexNow가 Bing을 커버함.");
 } else {
   console.log("Bing: BING_API_KEY 미설정 → 건너뜀(IndexNow가 Bing 커버).");
 }
 
-process.exitCode = inOk && bingOk ? 0 : 1;
+// 색인 핑은 best-effort 부가 작업 — 실패해도 배포(deploy)를 빨간불로 만들지 않는다.
+// 검색엔진은 사이트맵으로도 자연 색인하며, IndexNow/Bing 4xx는 대개 일시적 rate-limit이다.
+if (!inOk || !bingOk) {
+  console.log("::warning::색인 핑 일부 실패(비차단). 사이트맵 기반 자연 색인은 정상 진행됨.");
+}
+process.exitCode = 0;
