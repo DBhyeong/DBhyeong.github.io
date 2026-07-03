@@ -119,7 +119,7 @@ sequenceDiagram
     participant Slack as Slack API
     Me->>Bot: @봇 오늘 대화 회의록으로 캔버스에 정리해줘
     Bot->>Me: ⏳ 실행 중…
-    Bot->>Claude: 요청 + '지금 이 채널은 <id>' 컨텍스트 전달
+    Bot->>Claude: 요청 + '지금 이 채널은 (채널ID)' 컨텍스트 전달
     Claude->>Slack: 채널 읽기(스레드 포함) → 회의록 작성 → 채널 캔버스에 추가
     Claude->>Bot: 결과 요약
     Bot->>Me: 스레드로 답장(결과 보고)
