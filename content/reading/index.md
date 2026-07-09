@@ -40,6 +40,8 @@ tags:
 - [[geoflow-geo-content-engine|GEOFlow — GEO 콘텐츠 엔진]]
 - [[llm-ai-news-sources-catalog|LLM/AI 정보원 · 구독처 카탈로그]]
 - [[korea-ai-news-agent-governance-2026-06-23|국내 AI 이슈 — 에이전트 거버넌스 外 (AI타임스)]]
+- [[ai-it-digest-2026-07-09|AI/IT 데일리 다이제스트 (2026-07-09) — Grok 4.5·GhostApproval·일리노이 AI법]]
+- [[ai-it-digest-2026-07-06|AI/IT 데일리 다이제스트 (2026-07-06) — Sonnet 5·통제 격차·SKT 15GW]]
 - [[ai-it-digest-2026-06-24|AI/IT 데일리 다이제스트 (2026-06-24)]]
 - [[daily-issues-digest-2026-06-25|데일리 이슈 다이제스트 — AI·마케팅·국내뉴스 (2026-06-25)]]
 
