@@ -25,6 +25,15 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
+    // 글 본문 끝에 공유 버튼 — 블로그·읽을거리 글에만 노출(섹션 인덱스 제외)
+    Component.ConditionalRender({
+      component: Component.ShareButtons(),
+      condition: (page) => {
+        const s = page.fileData.slug ?? ""
+        if (s.endsWith("index")) return false
+        return s.startsWith("blog/") || s.startsWith("reading/")
+      },
+    }),
     // 홈(index)에만 "최근 글" 노출 — 블로그+일상 새 글을 자동 표시
     Component.ConditionalRender({
       component: Component.RecentNotes({
