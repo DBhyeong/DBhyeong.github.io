@@ -1,6 +1,13 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
+// 공유 버튼을 노출할 "글" 페이지 판별 — 블로그·읽을거리·일상 (섹션 인덱스 제외)
+const isArticlePage = (slug: string | undefined): boolean => {
+  const s = slug ?? ""
+  if (s.endsWith("index")) return false
+  return s.startsWith("blog/") || s.startsWith("reading/") || s.startsWith("daily/")
+}
+
 // 탐색기: 폴더별로 묶고 기본 접힘 + 폴더명 한글 라벨 → 깔끔하게
 const explorer = Component.Explorer({
   title: "탐색기",
@@ -25,14 +32,10 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
-    // 글 본문 끝에 공유 버튼 — 블로그·읽을거리 글에만 노출(섹션 인덱스 제외)
+    // 글 본문 끝에 공유 버튼 — 블로그·읽을거리·일상 글에 노출
     Component.ConditionalRender({
       component: Component.ShareButtons(),
-      condition: (page) => {
-        const s = page.fileData.slug ?? ""
-        if (s.endsWith("index")) return false
-        return s.startsWith("blog/") || s.startsWith("reading/")
-      },
+      condition: (page) => isArticlePage(page.fileData.slug),
     }),
     // 홈(index)에만 "최근 글" 노출 — 블로그+일상 새 글을 자동 표시
     Component.ConditionalRender({
@@ -67,6 +70,11 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
+    // 본문 상단(제목·태그 아래)에도 공유 버튼 — 글 페이지에만 (라벨 짧게)
+    Component.ConditionalRender({
+      component: Component.ShareButtons({ label: "공유" }),
+      condition: (page) => isArticlePage(page.fileData.slug),
+    }),
   ],
   left: [
     Component.PageTitle(),
