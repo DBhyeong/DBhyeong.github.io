@@ -49,6 +49,6 @@ SEO에서 출발해 이커머스 가격비교, 게임 3사 라이브 데이터 �
 
 - GitHub — [github.com/DBhyeong](https://github.com/DBhyeong)
 - YouTube — [@istp-hyeong](https://www.youtube.com/@istp-hyeong)
-- Email — [big203040@naver.com](mailto:big203040@naver.com)
+- Email — [presenting1@naver.com](mailto:presenting1@naver.com)
 
 > "예측보다 원인 규명. 도메인을 아는 사람이 데이터를 가장 깊게 읽는다." — 수집부터 리포트까지, 그 전 과정을 코드로 자동화합니다.
