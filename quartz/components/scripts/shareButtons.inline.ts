@@ -1,7 +1,7 @@
 // 공유 버튼 클라이언트 동작. Quartz SPA 라우팅의 "nav" 이벤트마다 재바인딩.
-// ⚠️ 카카오톡 공유를 켜려면 아래 KAKAO_JS_KEY를 dev.kakao.com 의 JavaScript 키로 바꾸고,
-//    카카오 앱 > 플랫폼 > Web 에 도메인(https://dbhyeong.github.io)을 등록해야 합니다.
-const KAKAO_JS_KEY = "여기에_카카오_JavaScript_키_입력"
+// 카카오 JavaScript 키(도메인 제한으로 보호되는 공개 클라이언트 키).
+//    카카오 앱 > JavaScript SDK 도메인에 https://dbhyeong.github.io 등록 필요.
+const KAKAO_JS_KEY = "d63a7259ccdb8205867dc221e3509d71"
 
 function kakaoReady(): boolean {
   const K = (window as any).Kakao
