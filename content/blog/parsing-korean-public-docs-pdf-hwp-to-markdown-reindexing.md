@@ -36,20 +36,20 @@ flowchart LR
         PDF["관보 PDF<br/>gwanbo.go.kr"]
         HWP["법령 별표<br/>HWP·HWPX"]
     end
-    subgraph S1["1. 추출 Extract"]
+    subgraph S1["① 추출 Extract"]
         OCR["opendataloader<br/>PDF 텍스트·구조 추출"]
         KOR["Kordoc<br/>HWP·HWPX 파서"]
     end
-    subgraph S2["2. 정규화·보정 Normalize"]
+    subgraph S2["② 정규화·보정 Normalize"]
         FIX["사전 기반 누적 보정<br/>깨진 글자·표 복원"]
     end
-    subgraph S3["3. 구조화 Structure"]
+    subgraph S3["③ 구조화 Structure"]
         MD["Markdown + frontmatter<br/>title·publisher·date"]
     end
-    subgraph S4["4. 인덱싱 Index"]
+    subgraph S4["④ 인덱싱 Index"]
         IDX["파일명 규약 + 정적 JSON<br/>meta·dates·titles"]
     end
-    subgraph S5["5. 소비 Serve"]
+    subgraph S5["⑤ 소비 Serve"]
         HUM["사람: 정적 리더·구조도"]
         AI["기계: chunk→임베딩→RAG"]
     end
@@ -112,15 +112,15 @@ derived/readable-corrected/YYYY-MM-DD/NNN_*.md   (사람+AI가 읽는 본체)
 
 ```mermaid
 flowchart TD
-    IN["OCR 직후 markdown<br/>글자 깨짐 존재"] --> P0["0. 깨진 이미지 링크를 마커로 치환"]
+    IN["OCR 직후 markdown<br/>글자 깨짐 존재"] --> P0["⓪ 깨진 이미지 링크를 마커로 치환"]
     P0 --> DICT
-    subgraph DICT["1~6. 사전 6종 순차 치환 · Pass 1"]
+    subgraph DICT["①~⑥ 사전 6종 순차 치환 · Pass 1"]
         direction LR
         D1["COMMON<br/>공통어휘"] --> D2["FINANCE<br/>금융·기관"] --> D3["RELATION<br/>관계어"] --> D4["PLACE<br/>지명"] --> D5["LEGAL<br/>법령·공직"] --> D6["RESIDUAL<br/>누적 조합"]
     end
-    DICT --> RG["7~10. regex 치환<br/>표 셀 · 토큰 · 긴 구문 · 숫자+단위"]
-    RG --> SC["11. 전역 단일 문자 치환<br/>이웃 분포 검증 통과분만"]
-    SC --> P2["12. 사전 재적용 · Pass 2<br/>단일문자 뒤 남은 조합 정리"]
+    DICT --> RG["⑦~⑩ regex 치환<br/>표 셀 · 토큰 · 긴 구문 · 숫자+단위"]
+    RG --> SC["⑪ 전역 단일 문자 치환<br/>이웃 분포 검증 통과분만"]
+    SC --> P2["⑫ 사전 재적용 · Pass 2<br/>단일문자 뒤 남은 조합 정리"]
     P2 --> OUT["보정 완료<br/>derived/readable-corrected/…"]
     classDef warn fill:#ffe3e3,stroke:#e03131,color:#a01818;
     classDef ok fill:#d3f9d8,stroke:#2f9e44,color:#1d6b2c;
