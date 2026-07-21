@@ -402,15 +402,15 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A["1. Whale을 CDP 포트로 실행"] --> B["2. 네이버 로그인 확인"]
-    B --> C["3. draft JSON과 이미지 폴더 준비"]
-    C --> D["4. 이미지 파일 수·크기·확장자 검증"]
-    D --> E["5. 배치 manifest 준비"]
-    E --> F["6. 발행 스크립트 실행"]
-    F --> G["7. 이미지 업로드"]
-    G --> H["8. documentModel 생성"]
-    H --> I["9. RabbitWrite 또는 TempPostWrite"]
-    I --> J["10. logNo·예약큐·저장 이미지 수 검증"]
+    A["① Whale을 CDP 포트로 실행"] --> B["② 네이버 로그인 확인"]
+    B --> C["③ draft JSON과 이미지 폴더 준비"]
+    C --> D["④ 이미지 파일 수·크기·확장자 검증"]
+    D --> E["⑤ 배치 manifest 준비"]
+    E --> F["⑥ 발행 스크립트 실행"]
+    F --> G["⑦ 이미지 업로드"]
+    G --> H["⑧ documentModel 생성"]
+    H --> I["⑨ RabbitWrite 또는 TempPostWrite"]
+    I --> J["⑩ logNo·예약큐·저장 이미지 수 검증"]
 ```
 
 실행 명령은 목적에 따라 달랐다.

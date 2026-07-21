@@ -134,13 +134,13 @@ Slack을 잘 쓰는 팀은 정보를 **잘 남기고 잘 찾는다.**
 
 ```mermaid
 flowchart TD
-    A["1. 채널 이름 규칙"] --> B["2. 스레드·멘션 규칙"]
-    B --> C["3. 사이드바 섹션 정리"]
-    C --> D["4. 채널별 캔버스"]
-    D --> E["5. 프로젝트 리스트"]
-    E --> F["6. 기본 워크플로우"]
-    F --> G["7. AI 요약·검색"]
-    G --> H["8. Slackbot·스킬로 반복업무 보조"]
+    A["① 채널 이름 규칙"] --> B["② 스레드·멘션 규칙"]
+    B --> C["③ 사이드바 섹션 정리"]
+    C --> D["④ 채널별 캔버스"]
+    D --> E["⑤ 프로젝트 리스트"]
+    E --> F["⑥ 기본 워크플로우"]
+    F --> G["⑦ AI 요약·검색"]
+    G --> H["⑧ Slackbot·스킬로 반복업무 보조"]
     classDef base fill:#ffe3e3,stroke:#e03131,color:#a01818;
     classDef ai fill:#d3f9d8,stroke:#2f9e44,color:#1d6b2c;
     class A,B base;
