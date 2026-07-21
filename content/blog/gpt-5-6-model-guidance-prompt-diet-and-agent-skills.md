@@ -25,7 +25,7 @@ flowchart TD
     G --> S["④ 지식 주입<br/>Agent Skills"]
     M --> M1["추론강도 6단계 none~max<br/>한 단계 낮춰 함께 비교"]
     F --> F1["전부 '평가로 입증될 때만' 켠다"]
-    P --> P1["점수 10~15%↑<br/>토큰 41~66%↓ · 비용 33~67%↓"]
+    P --> P1["점수 10-15%↑<br/>토큰 41-66%↓ · 비용 33-67%↓"]
     S --> S1["openai-docs 스킬로<br/>마이그레이션 자동 적용"]
     classDef a fill:#e7f5ff,stroke:#1c7ed6,color:#10548f;
     classDef b fill:#fff3bf,stroke:#e67700,color:#8a5a00;

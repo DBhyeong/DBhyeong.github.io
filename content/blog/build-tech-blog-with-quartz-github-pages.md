@@ -139,7 +139,7 @@ npm cache clean --force   # 안전하게 비움 → 6GB 확보
 flowchart LR
     A["content/blog/새글.md 작성"] --> B["git push"]
     B --> C["Actions: npm ci → quartz build"]
-    C --> D["Pages 배포 (~1~2분)"]
+    C --> D["Pages 배포 (약 1-2분)"]
     D --> E["글 라이브 + sitemap 자동 갱신"]
 ```
 

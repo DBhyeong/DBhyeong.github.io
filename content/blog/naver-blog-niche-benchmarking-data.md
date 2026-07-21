@@ -78,7 +78,7 @@ flowchart TB
 ```mermaid
 flowchart TB
     subgraph A["① 대형 콘텐츠 팜형"]
-      A1["하루 5~14개 대량 생산<br/>2~3년 무중단, 문체 정형화"]
+      A1["하루 5-14개 대량 생산<br/>2-3년 무중단, 문체 정형화"]
     end
     subgraph B["② 글로벌 아카이브형"]
       B1["경쟁 적은 니치 특화<br/>사진 대량, 텍스트 최소"]

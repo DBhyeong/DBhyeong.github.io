@@ -67,7 +67,7 @@ GROUP  BY CASE WHEN party_size = 1 THEN 'solo' ELSE 'party' END;
 
 ```mermaid
 flowchart TD
-  E1["쉬움~보통 난이도<br/>20~25층 구간"] --> Rep["솔로 반복 클리어(파밍)"]
+  E1["쉬움-보통 난이도<br/>20-25층 구간"] --> Rep["솔로 반복 클리어(파밍)"]
   Rep --> Rew["보상 획득 쏠림"]
   Rew --> E1
   E1 -.대다수 유저 체류.-> Stuck["상위 파티 컨텐츠로<br/>진행 유인 부족"]
