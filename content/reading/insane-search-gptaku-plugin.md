@@ -16,11 +16,11 @@ tags:
 
 ```mermaid
 flowchart LR
-    A["요청: 막힌 공개 페이지 가져와"] --> B["1. generic fetch<br/>(일반 HTTP)"]
-    B -- 403 / WAF 차단 --> C["2. 공개·내부 API 탐색<br/>(페이지가 쓰는 prefetch API 호출)"]
-    C -- 막힘 --> D["3. RSS / 피드"]
-    D -- 막힘 --> E["4. Jina reader<br/>(렌더링 프록시)"]
-    E -- 막힘 --> F["5. (옵션) Playwright<br/>안티봇 트랜스포트로 실브라우저"]
+    A["요청: 막힌 공개 페이지 가져와"] --> B["① generic fetch<br/>(일반 HTTP)"]
+    B -- 403 / WAF 차단 --> C["② 공개·내부 API 탐색<br/>(페이지가 쓰는 prefetch API 호출)"]
+    C -- 막힘 --> D["③ RSS / 피드"]
+    D -- 막힘 --> E["④ Jina reader<br/>(렌더링 프록시)"]
+    E -- 막힘 --> F["⑤ (옵션) Playwright<br/>안티봇 트랜스포트로 실브라우저"]
     F --> G["공개 데이터 추출 → 요약 · CSV"]
     H["🚫 로그인 / 결제 콘텐츠"] -. 제외(저자 명시) .-> A
 ```

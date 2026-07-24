@@ -98,10 +98,10 @@ mindmap
 
 ```mermaid
 flowchart LR
-    L1["1. 제약된 대화 시스템<br/>(prompt 계층화)"] --> L2["2. 연속 루프 의존<br/>(query loop · 상태)"]
-    L2 --> L3["3. 도구는 스케줄링 규율<br/>(runTools 병렬/직렬)"]
-    L3 --> L4["4. 최고위험 도구엔 최강 규칙<br/>(Bash)"]
-    L4 --> L5["5. 에러는 main path<br/>(recovery 내장)"]
+    L1["① 제약된 대화 시스템<br/>(prompt 계층화)"] --> L2["② 연속 루프 의존<br/>(query loop · 상태)"]
+    L2 --> L3["③ 도구는 스케줄링 규율<br/>(runTools 병렬/직렬)"]
+    L3 --> L4["④ 최고위험 도구엔 최강 규칙<br/>(Bash)"]
+    L4 --> L5["⑤ 에러는 main path<br/>(recovery 내장)"]
 ```
 
 | Layer | 무엇을 인정하나 | 근거 모듈 |
@@ -390,11 +390,11 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    S1["1. 허용 사용 범위 정의<br/>(어떤 task class에 에이전트 개입)"] --> S2["2. 검토·검증 기대 정의<br/>(done의 정의 표준화)"]
-    S2 --> S3["3. 반복 workflow를 skill/command로"]
-    S3 --> S4["4. 위험 tiered approval"]
-    S4 --> S5["5. hooks = 후반 고급 자동화"]
-    S5 --> S6["6. baseline replay → 고급 audit"]
+    S1["① 허용 사용 범위 정의<br/>(어떤 task class에 에이전트 개입)"] --> S2["② 검토·검증 기대 정의<br/>(done의 정의 표준화)"]
+    S2 --> S3["③ 반복 workflow를 skill/command로"]
+    S3 --> S4["④ 위험 tiered approval"]
+    S4 --> S5["⑤ hooks = 후반 고급 자동화"]
+    S5 --> S6["⑥ baseline replay → 고급 audit"]
 ```
 
 **주차별 빌더 체크리스트(요지):**

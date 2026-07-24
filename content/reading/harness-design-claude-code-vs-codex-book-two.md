@@ -319,8 +319,8 @@ flowchart TD
     START -->|규칙 산재·권한 경계 불명확| T2
     START -->|아직 성숙 시스템 없음·맨땅| T3
 
-    T1["Type 1: 프로토타입 있으나 long session 통제 불능<br/>→ <b>Claude Code 먼저</b><br/>runtime heartbeat 먼저 안정화"]
-    T2["Type 2: 규칙 많으나 출처 산재<br/>→ <b>Codex 먼저</b><br/>instruction·tool·policy·thread를 explicit하게"]
+    T1["Type 1: 프로토타입 있으나 long session 통제 불능<br/>→ Claude Code 먼저<br/>runtime heartbeat 먼저 안정화"]
+    T2["Type 2: 규칙 많으나 출처 산재<br/>→ Codex 먼저<br/>instruction·tool·policy·thread를 explicit하게"]
     T3["Type 3: 맨땅에서 시작<br/>→ 모순 하나 고르고 그 축으로 skeleton,<br/>반대편은 minimum만"]
 ```
 

@@ -41,9 +41,9 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    S1["1) 크롤링 직후 print(text)"] -->|멀쩡| S2["2) DataFrame 값 확인"]
-    S2 -->|멀쩡| S3["3) INSERT 직전 값 확인"]
-    S3 -->|멀쩡| S4["4) DB에서 SELECT"]
+    S1["① 크롤링 직후 print(text)"] -->|멀쩡| S2["② DataFrame 값 확인"]
+    S2 -->|멀쩡| S3["③ INSERT 직전 값 확인"]
+    S3 -->|멀쩡| S4["④ DB에서 SELECT"]
     S4 -->|깨짐!| HIT["→ 범인은 3→4 구간<br/>= 연결/컬럼/테이블"]
 ```
 

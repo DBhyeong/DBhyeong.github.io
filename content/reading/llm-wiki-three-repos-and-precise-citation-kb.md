@@ -102,11 +102,11 @@ flowchart TD
 flowchart TD
     A["문서 PDF/URL/docx"] --> B["변환: markitdown / 긴 PDF는 PageIndex 트리"]
     B --> C["LLM 컴파일 5단계"]
-    C --> C1["1. 요약 페이지(Summary)"]
-    C1 --> C2["2. 개념/엔티티 계획<br/>create · update · related"]
-    C2 --> C3["3. Concept · Entity 페이지 생성"]
-    C3 --> C4["4. 위키링크 화이트리스트 검증 + 유령링크 제거"]
-    C4 --> C5["5. index.md 갱신 (순수 코드)"]
+    C --> C1["① 요약 페이지(Summary)"]
+    C1 --> C2["② 개념/엔티티 계획<br/>create · update · related"]
+    C2 --> C3["③ Concept · Entity 페이지 생성"]
+    C3 --> C4["④ 위키링크 화이트리스트 검증 + 유령링크 제거"]
+    C4 --> C5["⑤ index.md 갱신 (순수 코드)"]
     C5 --> D["wiki/ 마크다운 + 위키링크"]
     D --> E["벡터리스 검색<br/>index → summary → 문단범위 직행"]
     D --> F["SKILL.md 증류 → 재배포 가능한 에이전트 스킬"]
@@ -271,7 +271,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    Q["질의: 특정 항목/이슈"] --> H["주제 허브 concepts/<주제>.md"]
+    Q["질의: 특정 항목/이슈"] --> H["주제 허브 concepts/＜주제＞.md"]
     H --> S1["원문 기준 문단<br/>(문단색인으로 줄범위 직행)"]
     H --> S2["관련 해석·질의응답<br/>(주제·근거번호 매칭)"]
     H --> S3["관련 적용·사례<br/>(cross-link)"]
@@ -379,9 +379,9 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    Q1["1. 검증 게이트 일반화<br/>(구조단언+산술검증, 전 포맷)"] --> Q2["2. 복잡표 PDF에 Docling 추가"]
-    Q2 --> Q3["3. HWP 어려운 표 = hwp MCP get_table_data"]
-    Q3 --> Q4["4. 문단/표 PageIndex + frontmatter 메타"]
+    Q1["① 검증 게이트 일반화<br/>(구조단언+산술검증, 전 포맷)"] --> Q2["② 복잡표 PDF에 Docling 추가"]
+    Q2 --> Q3["③ HWP 어려운 표 = hwp MCP get_table_data"]
+    Q3 --> Q4["④ 문단/표 PageIndex + frontmatter 메타"]
 ```
 
 1. **검증 게이트 일반화** — "저신뢰 플래그"를 전 포맷으로(구조단언+산술검증). 거의 100%의 핵심, 비용 낮음.
