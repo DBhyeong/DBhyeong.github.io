@@ -123,10 +123,10 @@ sequenceDiagram
 
 ```mermaid
 flowchart LR
-    A[1. 진단<br/>도수분포·픽률로<br/>쏠림 발견] --> B[2. 원인<br/>보상 효율 격차<br/>정량화]
-    B --> C[3. 제안<br/>조정안 + 예상효과<br/>숫자로 제시]
-    C --> D[4. 재측정<br/>신기효과 제외<br/>조건 통제 비교]
-    D --> E[5. 판정<br/>다양성 + 총량<br/>둘 다 확인]
+    A[① 진단<br/>도수분포·픽률로<br/>쏠림 발견] --> B[② 원인<br/>보상 효율 격차<br/>정량화]
+    B --> C[③ 제안<br/>조정안 + 예상효과<br/>숫자로 제시]
+    C --> D[④ 재측정<br/>신기효과 제외<br/>조건 통제 비교]
+    D --> E[⑤ 판정<br/>다양성 + 총량<br/>둘 다 확인]
     E --> A
     classDef step fill:#e6f4ea,color:#12492a,stroke:#2e8b57
     class A,B,C,D,E step

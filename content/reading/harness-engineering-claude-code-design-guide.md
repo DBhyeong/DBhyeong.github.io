@@ -316,7 +316,7 @@ flowchart TD
     C1 -->|no| C2{hasAttemptedReactiveCompact?}
     C2 -->|no| RC[tryReactiveCompact<br/>turn당 1회]
     C2 -->|yes| SURF[즉시 surface + stop hooks SKIP<br/>= 실패 의례화 방지]
-    Type -->|max_output_tokens| M1{cap<MAX?}
+    Type -->|max_output_tokens| M1{cap＜MAX?}
     M1 -->|yes| RAISE[maxOutputTokensOverride↑ 재실행<br/>= meta msg 없이 한 번 더]
     M1 -->|no| CONT[meta user msg append:<br/>사과·요약 없이 끊긴 곳부터 계속]
 ```
@@ -426,15 +426,15 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    P1[1. 모델은 동료가 아니라 불안정 부품] --> P2[2. Prompt는 control plane의 일부]
-    P2 --> P3[3. Query loop = 에이전트의 심장박동]
-    P3 --> P4[4. Tools = 관리되는 실행 인터페이스]
-    P4 --> P5[5. Context = working memory]
-    P5 --> P6[6. Error path = main path]
-    P6 --> P7[7. Recovery는 continuation 최적화]
-    P7 --> P8[8. Multi-agent = 불확실성 분할]
-    P8 --> P9[9. Verification은 독립적이어야]
-    P9 --> P10[10. 팀 제도 > 개인 트릭]
+    P1[① 모델은 동료가 아니라 불안정 부품] --> P2[② Prompt는 control plane의 일부]
+    P2 --> P3[③ Query loop = 에이전트의 심장박동]
+    P3 --> P4[④ Tools = 관리되는 실행 인터페이스]
+    P4 --> P5[⑤ Context = working memory]
+    P5 --> P6[⑥ Error path = main path]
+    P6 --> P7[⑦ Recovery는 continuation 최적화]
+    P7 --> P8[⑧ Multi-agent = 불확실성 분할]
+    P8 --> P9[⑨ Verification은 독립적이어야]
+    P9 --> P10[⑩ 팀 제도 > 개인 트릭]
 ```
 
 | # | 원칙 | 한 줄 |
