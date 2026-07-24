@@ -33,8 +33,8 @@ flowchart TD
 
     C --> X["✅ 해법<br/>토막마다 '이건 어디 얘기다'<br/>한 줄을 앞에 붙인다"]
     X --> R1["검색 실패 35% 감소"]
-    X --> R2["+ 글자 검색을 함께 쓰면<br/>49% 감소"]
-    X --> R3["+ 재심사 단계를 더하면<br/>67% 감소"]
+    X --> R2["＋ 글자 검색을 함께 쓰면<br/>49% 감소"]
+    X --> R3["＋ 재심사 단계를 더하면<br/>67% 감소"]
 
     classDef bad fill:#fdeaea,stroke:#c0392b,color:#7b241c
     classDef good fill:#e6f7ec,stroke:#1a7f45,color:#0f4d29

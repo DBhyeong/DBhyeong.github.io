@@ -179,7 +179,7 @@ flowchart TD
     G --> G2["② 사용자: ALLOWED_USERS로 본인만"]
     G --> G3["③ 도구: allowed_tools 화이트리스트<br/>(위험하면 Bash 제외)"]
     G --> G4["④ 승인: 파괴적 작업은 Slack 버튼 게이트<br/>(bypassPermissions 금지)"]
-    G1 --> P["+ 프롬프트 인젝션 대비:<br/>읽는 파일·타인 메시지의 지시문 오염 주의,<br/>민감 채널엔 봇 미초대, hooks로 위험 bash 차단"]
+    G1 --> P["＋ 프롬프트 인젝션 대비:<br/>읽는 파일·타인 메시지의 지시문 오염 주의,<br/>민감 채널엔 봇 미초대, hooks로 위험 bash 차단"]
     classDef r fill:#ffe3e3,stroke:#e03131,color:#a01818;
     class G4,P r;
 ```

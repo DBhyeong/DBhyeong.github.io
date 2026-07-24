@@ -136,7 +136,7 @@ flowchart TD
     D[default] --> Pick
     Pick{first_present<br/>= base 선택} --> Append
     Special["proactive_mode + agent →<br/>base = default + agent<br/>(교체 아닌 append)"] -.-> Append
-    Append[+ appendSystemPrompt<br/>항상 마지막] --> Out[최종 system prompt]
+    Append[＋ appendSystemPrompt<br/>항상 마지막] --> Out[최종 system prompt]
 ```
 
 | 불변식 | 의미 |
