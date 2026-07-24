@@ -314,7 +314,7 @@ flowchart TB
 
 ```mermaid
 flowchart TD
-    START{주요 모순<br/>(primary contradiction)은?}
+    START{"주요 모순<br/>(primary contradiction)은?"}
     START -->|long session 통제 불능| T1
     START -->|규칙 산재·권한 경계 불명확| T2
     START -->|아직 성숙 시스템 없음·맨땅| T3

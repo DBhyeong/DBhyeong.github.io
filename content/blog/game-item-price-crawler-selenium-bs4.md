@@ -87,13 +87,6 @@ sequenceDiagram
             C->>Q: 해당 URL 재시도 등록
         end
     end
-
-    classDef me fill:#dbe7ff,color:#123a7a,stroke:#4a78c8;
-    classDef ext fill:#fde2c8,color:#7a3b00,stroke:#e08a3c;
-    classDef store fill:#d7f5dd,color:#0b5323,stroke:#3aa55c;
-    class C,Q me
-    class S ext
-    class D store
 ```
 
 `429 Too Many Requests`가 뜨면 그건 서버가 "좀 천천히 와줘"라고 말하는 거다. 그럴 땐 대기 시간을 두 배로 늘리는 지수 백오프로 물러선다. 무시하고 계속 두드리면 IP가 막힌다.

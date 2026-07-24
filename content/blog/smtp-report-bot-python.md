@@ -129,11 +129,6 @@ sequenceDiagram
         B->>A: 경고 메일 발송
         B->>B: 관계자 발송은 중단
     end
-
-    classDef normal fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
-    classDef warn fill:#fff3e0,stroke:#ef6c00,color:#e65100
-    class S,B,D,M normal
-    class A warn
 ```
 
 그래서 나는 파이프라인 전체를 `try/except`로 감싸고, 예외가 나면 관계자 리스트가 아니라 나에게만 경고 메일을 보내게 했다. 데이터가 비었는지, 어제보다 행 수가 반토막 났는지 같은 기본 검증도 발송 직전에 넣었다. 잘못된 리포트를 20명에게 보내는 것보다, 나 한 명에게 "오늘 봇이 이상합니다" 메일이 오는 게 백 배 낫다.

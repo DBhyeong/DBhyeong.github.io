@@ -19,25 +19,25 @@ Agent Skills([[huggingface-skills-agent-context-protocol|이전 글]])가 "폴�
 
 ```mermaid
 flowchart TB
-    subgraph 이동·예매["🚄 이동·예매"]
+    subgraph MOVE["🚄 이동·예매"]
         T["SRT·KTX·고속/시외버스·항공권<br/>지하철 도착·따릉이·길찾기·주차"]
     end
-    subgraph 사업·법무["🏢 사업·법무·공공"]
+    subgraph BIZ["🏢 사업·법무·공공"]
         B["사업자 실사(등록·연금·체납·DART)<br/>법령·등기·지급명령·특허·KOSIS 통계"]
     end
-    subgraph 쇼핑·가격["🛒 쇼핑·가격비교"]
+    subgraph SHOP["🛒 쇼핑·가격비교"]
         S["쿠팡·네이버쇼핑·다나와·마켓컬리<br/>올리브영·다이소·오늘의집·중고차"]
     end
-    subgraph 생활["🌦️ 생활·정보"]
+    subgraph LIFE["🌦️ 생활·정보"]
         L["날씨·미세먼지·급식·도서관·응급실<br/>주유소·화장실·러브버그·조선왕조실록"]
     end
-    subgraph 채용·금융["💼 채용·금융"]
+    subgraph JOB["💼 채용·금융"]
         J["잡코리아·사람인 인재검색·공고매칭<br/>토스/대신증권·주식·하이패스"]
     end
-    subgraph 한국어·문서["✍️ 한국어·문서"]
+    subgraph DOC["✍️ 한국어·문서"]
         K["맞춤법·윤문(humanizer)·유행어·중세국어<br/>HWP 조회/편집/디버깅·글자수"]
     end
-    subgraph 스포츠·여가["⚽ 스포츠·여가"]
+    subgraph SPORT["⚽ 스포츠·여가"]
         P["KBO·KBL·K리그·LCK<br/>영화관·공연 잔여석·캐치테이블·사주"]
     end
     classDef box fill:#e7f5ff,stroke:#1971c2,color:#0b3d66;

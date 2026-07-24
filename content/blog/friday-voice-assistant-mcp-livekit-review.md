@@ -115,7 +115,7 @@ sequenceDiagram
     M->>V: ① 음성 입력
     V->>V: ② STT로 텍스트 변환
     V->>S: ③ 도구가 필요하면 SSE로 호출
-    S--&>>V: ④ 도구 결과 반환
+    S-->>V: ④ 도구 결과 반환
     V->>V: ⑤ LLM 응답 생성 후 TTS
     V->>K: ⑥ 음성으로 출력
     Note over V,S: 두 프로세스가 동시에 떠 있어야 한다

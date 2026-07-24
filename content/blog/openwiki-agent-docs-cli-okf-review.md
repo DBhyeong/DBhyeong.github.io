@@ -191,7 +191,7 @@ sequenceDiagram
     O->>O: ② openwiki/ 문서 생성
     Note over O: 일부 파일에 프론트매터 누락
     C->>V: ③ 다음날 --update 실행
-    V--&>>C: ④ lacks YAML front matter · exit 1
+    V-->>C: ④ lacks YAML front matter · exit 1
     Note over C,V: ⑤ 이후 스케줄 실행이 계속 실패
 ```
 
