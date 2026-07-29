@@ -11,7 +11,7 @@ description: "한국은행 ECOS·수출입은행·부동산원 R-ONE·국토부 
 
 앞서 [연결 구조](/blog/korean-public-data-realestate-api-linking)와 [실전 함정 13선](/blog/public-data-api-troubleshooting-13-pitfalls)을 요약으로 정리했는데, 요청이 있어 **전체 기술 레퍼런스**를 통째로 옮긴다. 한국의 금리·부동산·국토 공공데이터 **7개 시스템 + KOSIS + archhub MCP**를, 각 시스템의 호스트·코드·파라미터·함정까지 실측 기준으로 담은 마스터 문서다.
 
-> ⚠️ **안전 고지**: 이 글은 **공개된 정부 오픈데이터 API**의 기술 레퍼런스다. 등장 수치는 정부가 공표한 공개 통계이며 **2026년 5~6월 기준**(7/16 금리인상·7/23 유가 반영 전)이다. 투자 판단이나 회계·법률 자문이 아니다. **모든 API 키는 `.env`에만 두고 값은 본문에 싣지 않는다.**
+> ⚠️ **안전 고지**: 이 글은 **공개된 정부 오픈데이터 API**의 기술 레퍼런스다. 등장 수치는 정부가 공표한 공개 통계이며 **2026년 5\~6월 기준**(7/16 금리인상·7/23 유가 반영 전)이다. 투자 판단이나 회계·법률 자문이 아니다. **모든 API 키는 `.env`에만 두고 값은 본문에 싣지 않는다.**
 
 ## 전체 지도 — 무엇을 어디서 받나
 
@@ -19,7 +19,7 @@ description: "한국은행 ECOS·수출입은행·부동산원 R-ONE·국토부 
 
 | 데이터 | 시스템 | 키(.env 변수) | 최신성 | 도구 |
 |---|---|---|---|---|
-| 기준금리·시장금리·대출/수신금리·연체율·서베이 | 한국은행 ECOS | `BOK_ECOS_API_KEY` | 일별~월 | `fetch_rates.js` |
+| 기준금리·시장금리·대출/수신금리·연체율·서베이 | 한국은행 ECOS | `BOK_ECOS_API_KEY` | 일별\~월 | `fetch_rates.js` |
 | 환율·수은채 커브·국제금리 | 한국수출입은행 | `KOREAEXIM_API_KEY` | 일별 | `fetch_macro_data.js` |
 | 주택·아파트 가격지수·거래량·지가 | 한국부동산원 R-ONE | `REB_API_KEY` | 월 | `fetch_reb*.js` |
 | 공시지가·주택공시가격·토지특성·지오코딩 | 국토부 V-World | `VWORLD_API_KEY` | 연·상시 | `fetch_realestate.js` |
@@ -54,7 +54,7 @@ description: "한국은행 ECOS·수출입은행·부동산원 R-ONE·국토부 
 
 - **호스트**: `https://www.koreaexim.go.kr/site/program/financial/` (`exchangeJSON`/`loanJSON`/`internationalJSON`)
 - **3개 서비스가 키 1개 공용**.
-- `exchange` 통화별 매매기준율(주말·공휴일 빈배열 → 7일 역순 폴백) / `loan` = 수은채 유통수익률 커브 1M~10Y / `international` SOFR·ESTR·EURIBOR·TIBOR·스왑·CIRR.
+- `exchange` 통화별 매매기준율(주말·공휴일 빈배열 → 7일 역순 폴백) / `loan` = 수은채 유통수익률 커브 1M\~10Y / `international` SOFR·ESTR·EURIBOR·TIBOR·스왑·CIRR.
 
 ## 3. 한국부동산원 R-ONE — 가격지수·거래·지가
 
@@ -100,7 +100,7 @@ description: "한국은행 ECOS·수출입은행·부동산원 R-ONE·국토부 
 
 **주요 필드**: 매매 `dealAmount`(만원,콤마)·`umdNm`(법정동)·`dealYear/Month/Day`·`excluUseAr`/`totalFloorAr`·`jimok`(토지)·`buildingUse`(상업). 전월세 `deposit`·`monthlyRent`.
 
-**★함정 (실측)**: 갓 발급/활용신청 직후엔 게이트웨이가 **평문 `403 Forbidden`**(XML 아님) 반환 — 키 오류가 아니라 **API별 활성화 전파 지연**(수분~수시간, 순차). 실제로 발급 직후 5/12만 작동 → 수 분 뒤 12/12. 아파트매매는 **상세=Dev**(`AptTradeDev`), 비Dev는 미구독.
+**★함정 (실측)**: 갓 발급/활용신청 직후엔 게이트웨이가 **평문 `403 Forbidden`**(XML 아님) 반환 — 키 오류가 아니라 **API별 활성화 전파 지연**(수분\~수시간, 순차). 실제로 발급 직후 5/12만 작동 → 수 분 뒤 12/12. 아파트매매는 **상세=Dev**(`AptTradeDev`), 비Dev는 미구독.
 
 ## 6. 국토부 건축HUB (data.go.kr) — 대장·인허가·에너지·폐쇄말소
 
@@ -122,7 +122,7 @@ description: "한국은행 ECOS·수출입은행·부동산원 R-ONE·국토부 
 - 건축물대장 `getBr{BasisOuln,RecapTitle,Title,FlrOuln,Expos,Hsprc,Jijigu}Info`
 - 건축인허가 `getAp{BasisOuln,DongOuln,FlrOuln}Info`
 - 주택인허가 `getHp{BasisOuln,DongOuln,FlrOuln,HoOuln,SbsdFc,Wclf,Pklot,AtchPklot,…}Info` (16종)
-- 건물에너지 `getBeElctyUsgInfo`(전기)·`getBeGasUsgInfo`(가스) — **`useYm`(사용연월 YYYYMM) 필수** + bun/ji. 제외: 단독주택·200세대 미만 공동주택(2020.1~)·산업/수송/발전용 등
+- 건물에너지 `getBeElctyUsgInfo`(전기)·`getBeGasUsgInfo`(가스) — **`useYm`(사용연월 YYYYMM) 필수** + bun/ji. 제외: 단독주택·200세대 미만 공동주택(2020.1\~)·산업/수송/발전용 등
 - 폐쇄말소 `getSr{BasisOuln,RecapTitle,Title,FlrOuln,AtchJibun,ExposPubuseArea,Wclf,Expos,Hsprc,Jijigu}Info` (10종)
 
 **공통 파라미터**: `serviceKey`·`sigunguCd`·`bjdongCd`·`platGbCd`(0대지/1산/2블록)·`bun`·`ji`·`startDate`·`endDate`·`numOfRows`·`pageNo`. bun/ji 생략 시 **동(洞) 전체** 조회.
@@ -136,7 +136,7 @@ description: "한국은행 ECOS·수출입은행·부동산원 R-ONE·국토부 
 - 도구: `search_statistics`·`quick_stats`·`quick_trend`·`get_statistics_data`·`explain_statistic` 등 14종.
 - **★1차 소스로 쓰지 말 것** — 금리는 한국은행 표 미러(`orgId=301`), 부동산은 REB 미러(`orgId=408`), **갱신 지연**(아파트가격지수 2025-03에서 정지).
 - **올바른 용법**: KOSIS로 `orgId/tableId` 발견 → 원기관 API(ECOS·R-ONE) 직결로 최신치.
-- **KOSIS 고유 가치**: ① 가계금융복지조사(`orgId=101`) 가구 평균 자산·부채 금액(`DT_1HDAAD01`) + 소득/자산 분위별 부채 비율(`DT_1HDAAC08/09/10`, ~2025) ② 주택보급률(`orgId=116`) ③ 중견기업 대출금리(`orgId=115`) ④ 인구·고용·지역 파생통계.
+- **KOSIS 고유 가치**: ① 가계금융복지조사(`orgId=101`) 가구 평균 자산·부채 금액(`DT_1HDAAD01`) + 소득/자산 분위별 부채 비율(`DT_1HDAAC08/09/10`, \~2025) ② 주택보급률(`orgId=116`) ③ 중견기업 대출금리(`orgId=115`) ④ 인구·고용·지역 파생통계.
 
 ### 7-1. 가계부채 — 한국은행(총량) + KOSIS(분포) 병행 ★실측(공표 통계)
 
@@ -148,7 +148,7 @@ description: "한국은행 ECOS·수출입은행·부동산원 R-ONE·국토부 
 | 차주당 가계대출 잔액 | 한국은행(KOSIS 미러 301) | `DT_181Y002` | 9,740만원(2026Q1) |
 | 가구 평균 부채(금액) | KOSIS 가계금융복지조사 | `DT_1HDAAD01`(T01·C06·B000) | 9,534만원(2025, YoY +4.4%) |
 | 가구 평균 자산 | KOSIS | `DT_1HDAAD01`(T01·C05·B000) | 5.67억(2025) |
-| 연령별 부채 | KOSIS | `DT_1HDAAD01`(objL1 B023~B026) | 40대 1.43억 정점·30대 1.09·50대 1.10·60대+ 0.65억 |
+| 연령별 부채 | KOSIS | `DT_1HDAAD01`(objL1 B023\~B026) | 40대 1.43억 정점·30대 1.09·50대 1.10·60대+ 0.65억 |
 | 분위별 부채 비율 | KOSIS | `DT_1HDAAC08/09/10` | 소득/자산/순자산 5분위별 |
 
 ★ "비율" 표(HDAAC08)는 전체 100%라 무의미 → **금액 표 HDAAD01** 사용.
@@ -182,7 +182,7 @@ PNU(19자리) ── 앞5자리 = LAWD_CD = sigunguCd
 | 6 | REB | DATA_END_YY 부정확·pIndex 오래된순 | 기간창 조회 |
 | 7 | V-World | data API geomFilter 필수 | POINT 필터 |
 | 8 | V-World | 실거래가 없음 | data.go.kr 별도 |
-| 9 | MOLIT | 발급직후 403(전파지연) | 수분~수시간 후 재시도 |
+| 9 | MOLIT | 발급직후 403(전파지연) | 수분\~수시간 후 재시도 |
 | 10 | MOLIT | Decoding 원본은 401 | encodeURIComponent |
 | 11 | 건축HUB | `_type=json` 빈 응답 | `_type` 생략(XML)+파싱 |
 | 12 | 건축HUB | 에너지 useYm 필수·서비스명 오추정 | Swagger 명세 확인 |
@@ -204,7 +204,7 @@ PNU(19자리) ── 앞5자리 = LAWD_CD = sigunguCd
 ## 검증 노트
 
 - ✅ 실거래가 12종·V-World 6종·ECOS·REB·수출입은행·건축HUB 5종 **전부 실측 작동**.
-- ⚠️ 부동산 데이터 대부분 **2026-05~06 기준**.
+- ⚠️ 부동산 데이터 대부분 **2026-05\~06 기준**.
 - ⚠️ 모든 키는 `.env`에만(`.gitignore`), 본문에 값 미기재.
 
 요약 두 편([연결 구조](/blog/korean-public-data-realestate-api-linking) · [함정 13선](/blog/public-data-api-troubleshooting-13-pitfalls))이 "왜"라면, 이 문서는 "어떻게"의 전체 색인이다.

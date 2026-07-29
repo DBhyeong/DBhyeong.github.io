@@ -39,7 +39,7 @@ tags:
 
 Anthropic 공개 문서 기준으로, 위 사상과 맞닿은 Fable 5의 특성 몇 가지를 덧붙인다.
 
-- **사고(thinking)는 항상 켜져 있음** — `thinking` 파라미터를 생략하면 adaptive thinking이 적용된다. 깊이는 `output_config.effort`(`low`~`max`)로 조절한다.
+- **사고(thinking)는 항상 켜져 있음** — `thinking` 파라미터를 생략하면 adaptive thinking이 적용된다. 깊이는 `output_config.effort`(`low`\~`max`)로 조절한다.
 - **장기 에이전트 작업** — 단일 요청이 수 분간 실행될 수 있어 timeout·스트리밍·진행 UX를 미리 설계해야 한다.
 - **비동기 sub-agent 권장** — spawn-and-block보다 오케스트레이터와 비동기로 소통하는 long-lived sub-agent가 더 나은 결과를 낸다.
 - **메모리 표면 제공이 유효** — `.md` 한 장이라도 학습을 적어둘 곳을 주고 "다음 세션에서 참조하라"고 지시하면 성능이 눈에 띄게 향상된다.

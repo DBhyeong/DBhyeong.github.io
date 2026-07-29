@@ -73,14 +73,14 @@ README 기준 컨텍스트 스택은 다섯 조각이다.
 | 구성요소 | 하는 일 | 메모 |
 |---|---|---|
 | **Memory Engine** | 대화에서 사실 추출, 시간 변화·모순 처리, 만료 정보 자동 망각 | 핵심 엔진 |
-| **User Profiles** | 안정적 장기 사실 + 최근 맥락을 합쳐 자동 유지 | `profile.static` + `profile.dynamic`, **한 번 호출 ~50ms** |
+| **User Profiles** | 안정적 장기 사실 + 최근 맥락을 합쳐 자동 유지 | `profile.static` + `profile.dynamic`, **한 번 호출 \~50ms** |
 | **Hybrid Search** | RAG와 메모리를 한 쿼리로 | `searchMode: 'hybrid'`(기본) / `'memories'` |
 | **Connectors** | 외부 데이터 실시간 웹훅 동기화 | Google Drive·Gmail·Notion·OneDrive·GitHub·Web Crawler |
 | **Multimodal Extractors** | 업로드를 검색 가능한 청크로 | PDF·이미지(OCR)·영상(전사)·코드(AST 청킹) |
 
 User Profiles가 특히 영리하다. `profile.static`에는 "Acme의 시니어 엔지니어", "Vim 사용" 같은 **장기 사실**이, `profile.dynamic`에는 "인증 마이그레이션 작업 중" 같은 **최근 맥락**이 담긴다. 한 번 호출로 둘 다 받아 시스템 프롬프트에 주입하면, 에이전트가 "상대가 누구인지"를 아는 상태로 대화를 시작한다.
 
-> ⚠️ 수치를 섞지 말자. **'~50ms'는 `profile()` 호출** 기준이고, 랜딩 페이지가 광고하는 검색 지연은 별도로 'sub-300ms'다. 또 **커넥터 목록은 출처마다 다르다** — README는 'Web Crawler'를 넣지만 랜딩 페이지는 대신 'S3'를 넣는 식이다. '실시간 웹훅 동기화'는 일관되게 확인되지만, 세부 목록은 페이지마다 갈린다.
+> ⚠️ 수치를 섞지 말자. **'\~50ms'는 `profile()` 호출** 기준이고, 랜딩 페이지가 광고하는 검색 지연은 별도로 'sub-300ms'다. 또 **커넥터 목록은 출처마다 다르다** — README는 'Web Crawler'를 넣지만 랜딩 페이지는 대신 'S3'를 넣는 식이다. '실시간 웹훅 동기화'는 일관되게 확인되지만, 세부 목록은 페이지마다 갈린다.
 
 ## 코드 없이도, 코드로도 — 어떻게 쓰나?
 

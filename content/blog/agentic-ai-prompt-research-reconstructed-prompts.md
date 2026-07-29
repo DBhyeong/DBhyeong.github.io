@@ -41,7 +41,7 @@ flowchart LR
 
 ## 저장소는 실제로 뭘 담고 있나?
 
-직접 조회해 보니 구조는 단순했다. 루트에 `README.md` 하나, 그리고 `prompts/` 디렉터리 안에 **01번부터 30번까지 번호가 매겨진 마크다운 문서 30개**가 들어 있다. 재밌는 디테일 하나 — 저장소 이름은 `agentic-ai-prompt-research`인데 **README 내부 제목은 "Claude Code System Prompts"**이고, 첫 문서 `01_main_system_prompt.md`가 약 23KB로 압도적으로 크다(나머지는 대부분 1~10KB).
+직접 조회해 보니 구조는 단순했다. 루트에 `README.md` 하나, 그리고 `prompts/` 디렉터리 안에 **01번부터 30번까지 번호가 매겨진 마크다운 문서 30개**가 들어 있다. 재밌는 디테일 하나 — 저장소 이름은 `agentic-ai-prompt-research`인데 **README 내부 제목은 "Claude Code System Prompts"**이고, 첫 문서 `01_main_system_prompt.md`가 약 23KB로 압도적으로 크다(나머지는 대부분 1\~10KB).
 
 README는 이 30개를 주제별 섹션으로 묶는데, 여기서 **커뮤니티 요약과 실제가 갈린다**. PyTorch KR 소개글은 "6개 영역"으로 정리했지만, 실제 README의 소제목을 세어 보면 **9개**다.
 

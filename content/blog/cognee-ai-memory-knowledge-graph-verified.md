@@ -178,7 +178,7 @@ flowchart LR
 | 항목 | 소개글 | 실제 확인 |
 |---|---|---|
 | 라이선스 | Apache 2.0 | ✅ 맞음 (LICENSE 파일 확인) |
-| Python 버전 | 3.10 ~ 3.13 | ⚠️ **3.10 ~ 3.14** (설정 파일에 `>=3.10,<3.15`) |
+| Python 버전 | 3.10 \~ 3.13 | ⚠️ **3.10 \~ 3.14** (설정 파일에 `>=3.10,<3.15`) |
 | 네 가지 동작 | remember / recall / forget / improve | ✅ 실재하는 현행 API |
 | `improve(feedback=...)` | 예제로 제시 | 🔴 **해당 인자 없음 → 에러** |
 | Neo4j | "권장" | ✅ **선택 사항.** 기본은 외부 DB 없이 도는 내장 엔진 |
@@ -271,7 +271,7 @@ flowchart TD
 
 ## 참고
 
-- Cognee — GitHub `topoteretes/cognee`, **Apache 2.0**, Python 3.10~3.14, 최신 v1.4.0 (2026-07-17)
+- Cognee — GitHub `topoteretes/cognee`, **Apache 2.0**, Python 3.10\~3.14, 최신 v1.4.0 (2026-07-17)
 - 기본 그래프 엔진은 내장형이며 Neo4j·Kuzu·Postgres 등은 **선택**. 벡터 저장소는 LanceDB(기본)·PGVector 등 내장, 그 외는 커뮤니티 어댑터
 - 논문 — Marković, Obradović, Hajdu, Pavlović, *"Optimizing the Interface Between Knowledge Graphs and LLMs for Complex Reasoning"* (arXiv:2505.24478, 2025-05-30). **저자 4명 중 3명이 Cognee Inc. 소속, 피어리뷰 전 프리프린트**
 - 논문 실험 규모: 데이터셋당 학습 24문항 / 평가 12문항, 무작위 추출 후 수작업 선별

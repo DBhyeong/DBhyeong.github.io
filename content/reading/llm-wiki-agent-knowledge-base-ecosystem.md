@@ -51,8 +51,8 @@ flowchart TD
 ```
 
 - **3-레이어**: 원문(불변) / 위키(LLM 소유) / 스키마(CLAUDE.md·AGENTS.md). "Obsidian=IDE, LLM=프로그래머, 위키=코드베이스".
-- **작업**: Ingest(새 소스 → 10~15개 페이지 갱신) · Query(인용과 함께 합성, 좋은 답은 새 페이지로) · Lint(모순·낡은 주장·고아 페이지·누락 링크 점검).
-- **인덱싱**: `index.md`(전 페이지 카탈로그 + 한 줄 요약, 쿼리 시 먼저 읽음) + `log.md`(시간순 기록, `grep "^## \["`로 파싱). **~100 소스·수백 페이지 규모는 임베딩 RAG 없이도 잘 작동**한다.
+- **작업**: Ingest(새 소스 → 10\~15개 페이지 갱신) · Query(인용과 함께 합성, 좋은 답은 새 페이지로) · Lint(모순·낡은 주장·고아 페이지·누락 링크 점검).
+- **인덱싱**: `index.md`(전 페이지 카탈로그 + 한 줄 요약, 쿼리 시 먼저 읽음) + `log.md`(시간순 기록, `grep "^## \["`로 파싱). **\~100 소스·수백 페이지 규모는 임베딩 RAG 없이도 잘 작동**한다.
 - **선택적 CLI**: `qmd`(마크다운용 로컬 BM25/벡터 하이브리드 검색 + 리랭킹, CLI + MCP). 소규모는 index 파일만으로 충분.
 - **도구 팁**: Obsidian Web Clipper / 그래프 뷰 / Marp(슬라이드) / Dataview(frontmatter 쿼리) / git 버전관리.
 - 사상적 뿌리: Vannevar Bush의 **Memex(1945)** — "누가 유지하는가" 문제를 LLM이 해결.
@@ -130,7 +130,7 @@ Joined with [customers](/tables/customers.md) on `customer_id`.
 - **핵심 가치 = progressive disclosure(점진적 공개)**: 모든 지침을 한 문서에 몰면 토큰 낭비. 스킬은 **필요할 때만 세부 로드**한다. Claude는 description까지만 읽고 멈춰 토큰을 절약한다.
 - HN 논쟁(활용도 직결):
   - **skills vs AGENTS.md**: Vercel 평가 56%에서 스킬 미호출 → AGENTS.md에 직접 명시가 더 안정적이란 보고. **활성 조건을 매우 명확히** 써야 한다(`/foo` 명시 호출 선호).
-  - **Semantic Pyramid**(MOOLLM): `GLANCE.yml → CARD.yml → SKILL.md → README.md` 순 점진 세분화. GLANCE는 "관련 있나?"만 5~70줄로 판단. **INDEX.md가 INDEX.yml보다 80%+ 압축·서사 구조 우수**라는 주장.
+  - **Semantic Pyramid**(MOOLLM): `GLANCE.yml → CARD.yml → SKILL.md → README.md` 순 점진 세분화. GLANCE는 "관련 있나?"만 5\~70줄로 판단. **INDEX.md가 INDEX.yml보다 80%+ 압축·서사 구조 우수**라는 주장.
   - "스킬 = 특정 주제의 README", "명확한 워크플로(X→Y→Z 검증)로 정의하면 잘 듣고, 모호한 가이드는 무시된다".
 - **활용도 시사**: SKILL.md 기반 스킬은 **정확히 이 표준**이다. 트리거 description·역할 분담을 잘 잡은 위에 **GLANCE/CARD식 점진 공개**를 얹으면 토큰 효율이 올라간다.
 

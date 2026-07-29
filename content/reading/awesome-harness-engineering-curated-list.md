@@ -13,7 +13,7 @@ tags:
 
 ## 무엇을 모았나 — 8개 카테고리 (mindmap)
 
-하네스를 설계할 때 마주치는 국면별로 ~100여 건을 8개로 나눈다.
+하네스를 설계할 때 마주치는 국면별로 \~100여 건을 8개로 나눈다.
 
 ```mermaid
 mindmap
@@ -65,7 +65,7 @@ flowchart LR
 
 > 실제로 Anthropic의 *Quantifying infrastructure noise* 글은 **런타임 설정만으로 코딩 벤치 점수가 리더보드 격차보다 크게 흔들릴 수 있다**고 보였고, LangChain의 *Improving Deep Agents with harness engineering* 은 **모델을 안 바꾸고 하네스 변경만으로 성능이 유의하게 개선**된다는 증거를 제시한다. "좋은 모델"보다 "좋은 하네스"가 결과를 가른다는 것.
 
-## 벤치마크 ~40종 — 영역별 (가장 큰 섹션)
+## 벤치마크 \~40종 — 영역별 (가장 큰 섹션)
 
 | 영역 | 대표 벤치마크 |
 |---|---|
@@ -88,7 +88,7 @@ flowchart LR
 | 주장 | 검증 결과 |
 |---|---|
 | 8개 주요 카테고리 | ✅ 사실 (Courses·Foundations·Context·Constraints·Specs·Evals·Benchmarks·Runtimes) |
-| ~100건, 벤치마크 ~40종 | ✅ 대체로 사실 (정확한 수는 레포에 명시 없음, 실측 ~40개 벤치 일치) |
+| \~100건, 벤치마크 \~40종 | ✅ 대체로 사실 (정확한 수는 레포에 명시 없음, 실측 \~40개 벤치 일치) |
 | CC0 1.0 라이선스 | ✅ **사실** (LICENSE·README가 CC0 1.0 명시. 단 GitHub 자동감지는 "Other/NOASSERTION"로 표시 — 표기상 차이일 뿐) |
 | 정의·인용문 ("shaping the environment…", "compare harness quality, not just model quality" 등) | ✅ README 원문과 **그대로 일치** |
 | EvoClaw·ClawWork·LLM Colosseum·MCPMark·SEC-bench 등 이색 항목 | ✅ 전부 실재 (환각 아님) |

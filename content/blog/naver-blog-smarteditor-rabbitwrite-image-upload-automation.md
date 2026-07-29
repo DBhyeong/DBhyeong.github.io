@@ -240,7 +240,7 @@ text(closing + hashtags + related links)
 
 ## imageGroup 콜라주는 왜 따로 빌더가 필요했나?
 
-일반 `image` 컴포넌트만 쓰면 글이 길어진다. 특히 기사형 글에서 사진을 15~20장 넣으면 세로로 끝없이 쌓인다. 그래서 `imageGroup`을 썼다. 네이버 뷰어에서는 2장씩 한 행으로 묶인 콜라주처럼 보인다.
+일반 `image` 컴포넌트만 쓰면 글이 길어진다. 특히 기사형 글에서 사진을 15\~20장 넣으면 세로로 끝없이 쌓인다. 그래서 `imageGroup`을 썼다. 네이버 뷰어에서는 2장씩 한 행으로 묶인 콜라주처럼 보인다.
 
 `IMAGEGROUP_COLLAGE_NOTES2.md`와 `scripts/imagegroup_builder.py`를 보면 핵심은 세 가지다.
 

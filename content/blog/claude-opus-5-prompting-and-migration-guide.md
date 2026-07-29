@@ -578,7 +578,7 @@ Claude Opus 5에서 쓸 수 있지만 **Claude API 한정**이다. Amazon Bedroc
 |---|---|---|
 | `thinking` 필드 생략 시 | 사고 없이 실행 | **적응형 사고로 실행** |
 | `thinking: disabled` 허용 범위 | effort와 무관하게 허용 | **effort high 이하만, 그 위는 400** |
-| effort 단계 | low ~ max | low ~ max (**토큰 배분 재조정**) |
+| effort 단계 | low \~ max | low \~ max (**토큰 배분 재조정**) |
 | 프롬프트 캐시 최소 길이 | 1,024 토큰 | **512 토큰** |
 | 컨텍스트 윈도우 | 100만 토큰 | 100만 토큰 (기본이자 최대) |
 | 최대 출력 토큰 | 128k | 128k |

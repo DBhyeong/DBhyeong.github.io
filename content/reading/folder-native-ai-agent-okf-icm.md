@@ -48,10 +48,10 @@ flowchart LR
 
 | 글 주장 | 실제 (검증) |
 |---|---|
-| 스타 "3,000+" *또는* "1,374" | ❌ 실제 **2,612 (~2.6k)** — 둘 다 틀림 |
+| 스타 "3,000+" *또는* "1,374" | ❌ 실제 **2,612 (\~2.6k)** — 둘 다 틀림 |
 | **OKF 번들 내보내기** | ❌ repo에 OKF 언급·구현 **전혀 없음**(OKF는 이 repo보다 몇 달 뒤 나온 별개 Google 스펙) |
 | `memory/` + `workflow/` + `MEMORY.md` + 단계별 `CONTEXT.md` 구조 | ❌ repo엔 **그 구조 없음**. 실제는 `raw/ wiki/ boards/ templates/` + `index.md·log.md·SOUL.md·CRITICAL_FACTS.md·_CLAUDE.md`. (글의 memory//workflow/ 는 **저자 개인 볼트 컨벤션**이지 repo가 아님) |
-| (성격) | repo는 **크로스-CLI 스킬**(Claude Code+Codex+Gemini+OpenCode), 슬래시 명령 43~45개, Python, MIT, 2026-03-24 생성 |
+| (성격) | repo는 **크로스-CLI 스킬**(Claude Code+Codex+Gemini+OpenCode), 슬래시 명령 43\~45개, Python, MIT, 2026-03-24 생성 |
 
 → 정리: **OKF·ICM 표준 자체는 진짜**(확인됨). 하지만 이 글은 **저자의 "두 폴더로 합치자"는 개념/주장**이고, 끌어온 repo는 그 개념을 *그대로* 구현한 게 아니라 느슨한 예시다. memory//workflow/ 구조는 **만들면 되는 패턴**이지 그 repo를 깔면 나오는 게 아님.
 

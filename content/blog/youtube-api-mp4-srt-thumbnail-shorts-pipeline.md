@@ -67,7 +67,7 @@ YouTube 쪽에서 실제로 쓰는 중심 API는 세 개다.
 | [`captions.insert`](https://developers.google.com/youtube/v3/docs/captions/insert) | SRT 같은 자막 트랙 업로드 | 업로드된 video ID, SRT 파일, 언어 코드 |
 | [`thumbnails.set`](https://developers.google.com/youtube/v3/docs/thumbnails/set) | 커스텀 썸네일 지정 | 업로드된 video ID, 썸네일 이미지 |
 
-쇼츠도 별도의 신비한 API가 따로 있는 게 아니다. 짧은 세로 영상을 일반 영상처럼 `videos.insert`로 올리고, 형식과 길이가 YouTube Shorts 조건에 맞으면 쇼츠로 다뤄진다. [YouTube 도움말](https://support.google.com/youtube/answer/15424877?hl=ko) 기준으로 쇼츠는 현재 최대 3분까지 가능하다고 안내되어 있다. 다만 실전에서는 30초~60초짜리가 여전히 편하다. 편집도 쉽고, 검수도 빠르고, 반복 업로드에도 부담이 적다.
+쇼츠도 별도의 신비한 API가 따로 있는 게 아니다. 짧은 세로 영상을 일반 영상처럼 `videos.insert`로 올리고, 형식과 길이가 YouTube Shorts 조건에 맞으면 쇼츠로 다뤄진다. [YouTube 도움말](https://support.google.com/youtube/answer/15424877?hl=ko) 기준으로 쇼츠는 현재 최대 3분까지 가능하다고 안내되어 있다. 다만 실전에서는 30초\~60초짜리가 여전히 편하다. 편집도 쉽고, 검수도 빠르고, 반복 업로드에도 부담이 적다.
 
 ```mermaid
 sequenceDiagram
@@ -207,7 +207,7 @@ flowchart TD
 |---|---|
 | 독립성 | 이 구간만 봐도 무슨 말인지 이해되는가 |
 | 후킹 | 첫 3초 안에 궁금증이 생기는가 |
-| 길이 | 30초~60초 안에 자연스럽게 끝나는가 |
+| 길이 | 30초\~60초 안에 자연스럽게 끝나는가 |
 | 자막 밀도 | 화면에 글자가 너무 많지 않은가 |
 | 본편 연결성 | 본편을 보러 갈 이유를 남기는가 |
 

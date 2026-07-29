@@ -45,7 +45,7 @@ flowchart LR
 | user_id | 유저 식별자(해시) | u_00417 |
 | dungeon_id | 던전 종류 | dg_forest |
 | difficulty | 난이도 | normal / hard / hell |
-| floor | 층 | 1 ~ 30 |
+| floor | 층 | 1 \~ 30 |
 | cleared_at | 클리어 시각 | 2026-07-01 21:14 |
 | reward_value | 그 판에서 얻은 보상 환산치 | 320 (더미 포인트) |
 | clear_time_sec | 클리어 소요 시간(초) | 88 |

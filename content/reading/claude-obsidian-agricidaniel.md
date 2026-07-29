@@ -22,8 +22,8 @@ tags:
 ## 검증된 사실 (1차 출처 대조)
 
 - **MIT 라이선스**, **2026-04-07 생성**, 최신 **v1.9.2 (2026-05)**. 저자 Agrici Daniel.
-- **스킬 15개**(블로그 본문은 "~10개"라 했으나 실제 15): `wiki · wiki-ingest · wiki-query · wiki-lint · save · autoresearch · canvas · defuddle · obsidian-markdown · obsidian-bases` + `think · wiki-cli · wiki-fold · wiki-mode · wiki-retrieve`.
-- **Hot cache**: `wiki/hot.md`(최근 컨텍스트 캐시, 설계 스펙 ~500단어, 세션마다 갱신, `index.md`보다 먼저 읽음) → 세션 기억상실 완화.
+- **스킬 15개**(블로그 본문은 "\~10개"라 했으나 실제 15): `wiki · wiki-ingest · wiki-query · wiki-lint · save · autoresearch · canvas · defuddle · obsidian-markdown · obsidian-bases` + `think · wiki-cli · wiki-fold · wiki-mode · wiki-retrieve`.
+- **Hot cache**: `wiki/hot.md`(최근 컨텍스트 캐시, 설계 스펙 \~500단어, 세션마다 갱신, `index.md`보다 먼저 읽음) → 세션 기억상실 완화.
 - **병렬 멀티에이전트 ingest**: `scripts/wiki-lock.sh` 파일별 advisory lock(한 writer가 잠그면 다른 쪽 재시도). v1.7부터 다중 writer 안전.
 - **`setup-multi-agent.sh` = 6개 툴 설치**: Claude Code(`.claude-plugin/`) · Codex(`~/.codex/skills`) · OpenCode · Gemini(`~/.gemini/skills`) · Cursor(`.cursor/skills`) · Windsurf.
 - **`/autoresearch`**: 자율 웹리서치 루프(광범위 검색 → 공백 보완 → 종합 → 위키 파일링, 교차참조 포함).
@@ -36,14 +36,14 @@ tags:
 | wiki-query | 특정 페이지 인용해 검색·응답 | "X에 대해 뭐 알아?" |
 | wiki-lint | 고아·깨진 링크·모순·결측 점검 | "lint the wiki" |
 | autoresearch | 자율 웹리서치 루프 | `/autoresearch [주제]` |
-| save / canvas / defuddle | 대화→위키노트 / 시각자료 / 웹페이지 정제(토큰 40~60%↓) | `/save` `/canvas` URL |
+| save / canvas / defuddle | 대화→위키노트 / 시각자료 / 웹페이지 정제(토큰 40\~60%↓) | `/save` `/canvas` URL |
 
 ## 팩트체크 정정
 
 | 글 주장 | 실제 (검증) |
 |---|---|
-| 스타 **~358** | ❌ 실제 **7,282 (~7.3k)**, 포크 ~846 — 글이 크게 outdated/오류 |
-| 스킬 "~10개" | 실제 **15개** |
+| 스타 **\~358** | ❌ 실제 **7,282 (\~7.3k)**, 포크 \~846 — 글이 크게 outdated/오류 |
+| 스킬 "\~10개" | 실제 **15개** |
 | PKM AI 시장 \$1.65B / 46.7% CAGR \$11.24B / McKinsey 30-45% / Fed 5.4% | ⚠️ **마케팅 필러** — repo 속성 아님. 두 통계는 서로 다른 유료 리포트를 섞은 것. 신뢰 X |
 
 > vs Smart Connections·Copilot(둘 다 RAG 챗봇 = 기존 노트에 질의) — claude-obsidian은 **생성·정리·유지·진화하는 엔진**이라는 글 주장은 기능상 합리적(검증된 스킬셋과 부합).
